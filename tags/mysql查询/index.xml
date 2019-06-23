@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mysql查询 on Ohohhh&#39;s blog</title>
+    <link>https://ohohhh.github.io/tags/mysql%E6%9F%A5%E8%AF%A2/</link>
+    <description>Recent content in mysql查询 on Ohohhh&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>&amp;copy; 2016. All rights reserved.</copyright>
+    <lastBuildDate>Wed, 19 Jun 2019 13:41:40 +0800</lastBuildDate>
+    
+	<atom:link href="https://ohohhh.github.io/tags/mysql%E6%9F%A5%E8%AF%A2/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mysql基本使用之查询</title>
+      <link>https://ohohhh.github.io/post/mysql%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E4%B9%8B%E6%9F%A5%E8%AF%A2/</link>
+      <pubDate>Wed, 19 Jun 2019 13:41:40 +0800</pubDate>
+      
+      <guid>https://ohohhh.github.io/post/mysql%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E4%B9%8B%E6%9F%A5%E8%AF%A2/</guid>
+      <description>创建一个数据库: create database test_99 charset=utf8; 使用一个数据库: use test_99; 显示使用的当前数据库是哪个? select databases( ); 查询当前mysql系统中所有的数据库: show databases; 创建students</description>
+    </item>
+    
+  </channel>
+</rss>

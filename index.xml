@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ohohhh&#39;s blog</title>
+    <link>https://ohohhh.github.io/</link>
+    <description>Recent content on Ohohhh&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>&amp;copy; 2016. All rights reserved.</copyright>
+    <lastBuildDate>Wed, 19 Jun 2019 13:41:40 +0800</lastBuildDate>
+    
+	<atom:link href="https://ohohhh.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mysql基本使用之查询</title>
+      <link>https://ohohhh.github.io/post/mysql%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E4%B9%8B%E6%9F%A5%E8%AF%A2/</link>
+      <pubDate>Wed, 19 Jun 2019 13:41:40 +0800</pubDate>
+      
+      <guid>https://ohohhh.github.io/post/mysql%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E4%B9%8B%E6%9F%A5%E8%AF%A2/</guid>
+      <description>创建一个数据库: create database test_99 charset=utf8; 使用一个数据库: use test_99; 显示使用的当前数据库是哪个? select databases( ); 查询当前mysql系统中所有的数据库: show databases; 创建students</description>
+    </item>
+    
+    <item>
+      <title>Linux常用命令</title>
+      <link>https://ohohhh.github.io/post/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Tue, 18 Jun 2019 15:46:15 +0800</pubDate>
+      
+      <guid>https://ohohhh.github.io/post/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+      <description>1&amp;gt; 查看文件信息： ls 参数 含义 -a 显示指定目录下所有子目录与文件，包括隐藏文件 -l 以列表方式显示文件的详细信息 -h 配合 -l 以人性化的方式显示文件大小 2&amp;gt; 清</description>
+    </item>
+    
+    <item>
+      <title>使用Hugo搭建个人博客</title>
+      <link>https://ohohhh.github.io/post/hugo/</link>
+      <pubDate>Mon, 03 Jun 2019 16:09:17 +0800</pubDate>
+      
+      <guid>https://ohohhh.github.io/post/hugo/</guid>
+      <description>Hugo官网: https://gohugo.io Hugo中文文档： https://www.gohugo.org/ 1. 安装Hugo 从 hugo 的 GitHub 仓库 下载安装包，使用即可。我使用的是 hugo_0.40.3_Windows-64bit.zip 这个版本。下载解压后添加到 Windows 的系统环境变量的</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://ohohhh.github.io/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ohohhh.github.io/contact/</guid>
+      <description> 联系方式 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Li Qiang
+ E-mail :1832656473@qq.com E-mail :lq299199@gmail.com  </description>
+    </item>
+    
+  </channel>
+</rss>

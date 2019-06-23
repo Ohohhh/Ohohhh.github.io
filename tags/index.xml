@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Ohohhh&#39;s blog</title>
+    <link>https://ohohhh.github.io/tags/</link>
+    <description>Recent content in Tags on Ohohhh&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>&amp;copy; 2016. All rights reserved.</copyright>
+    <lastBuildDate>Wed, 19 Jun 2019 13:41:40 +0800</lastBuildDate>
+    
+	<atom:link href="https://ohohhh.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>mysql查询</title>
+      <link>https://ohohhh.github.io/tags/mysql%E6%9F%A5%E8%AF%A2/</link>
+      <pubDate>Wed, 19 Jun 2019 13:41:40 +0800</pubDate>
+      
+      <guid>https://ohohhh.github.io/tags/mysql%E6%9F%A5%E8%AF%A2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux命令</title>
+      <link>https://ohohhh.github.io/tags/linux%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Tue, 18 Jun 2019 15:46:15 +0800</pubDate>
+      
+      <guid>https://ohohhh.github.io/tags/linux%E5%91%BD%E4%BB%A4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://ohohhh.github.io/tags/hugo/</link>
+      <pubDate>Mon, 03 Jun 2019 16:09:17 +0800</pubDate>
+      
+      <guid>https://ohohhh.github.io/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

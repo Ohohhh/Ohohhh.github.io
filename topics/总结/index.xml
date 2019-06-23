@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>总结 on Ohohhh&#39;s blog</title>
+    <link>https://ohohhh.github.io/topics/%E6%80%BB%E7%BB%93/</link>
+    <description>Recent content in 总结 on Ohohhh&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>&amp;copy; 2016. All rights reserved.</copyright>
+    <lastBuildDate>Mon, 03 Jun 2019 16:09:17 +0800</lastBuildDate>
+    
+	<atom:link href="https://ohohhh.github.io/topics/%E6%80%BB%E7%BB%93/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用Hugo搭建个人博客</title>
+      <link>https://ohohhh.github.io/post/hugo/</link>
+      <pubDate>Mon, 03 Jun 2019 16:09:17 +0800</pubDate>
+      
+      <guid>https://ohohhh.github.io/post/hugo/</guid>
+      <description>Hugo官网: https://gohugo.io Hugo中文文档： https://www.gohugo.org/ 1. 安装Hugo 从 hugo 的 GitHub 仓库 下载安装包，使用即可。我使用的是 hugo_0.40.3_Windows-64bit.zip 这个版本。下载解压后添加到 Windows 的系统环境变量的</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  <title>Linux常用命令 &middot; Ohohhh&#39;s blog</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://ohohhh.github.io/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://ohohhh.github.io/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://ohohhh.github.io/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/androidstudio.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://ohohhh.github.ioimg/favicon.ico" type="image/x-icon" />
+
+  
+    
+        <link rel="stylesheet" href="https://ohohhh.github.iocss/my.css">
+    
+  
+  
+    
+        <script src="https://ohohhh.github.iojs/my.js"></script>
+    
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+  <a class="pure-menu-heading brand" href="https://ohohhh.github.io/">Menu</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://ohohhh.github.io/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://ohohhh.github.io/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://ohohhh.github.io/topics/"><i class='fa fa-folder fa-fw'></i>Topics</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://ohohhh.github.io/tags/"><i class='fa fa-tags fa-fw'></i>Tags</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://ohohhh.github.io/contact/"><i class='fa fa-phone fa-fw'></i>Contact</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="http://weibo.com/5954877907" rel="me" target="_blank"><i class="fa fa-weibo fa-fw"></i>Weibo</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/Ohohhh" rel="me" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2016. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Linux常用命令</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>18 Jun 2019, 15:46</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://ohohhh.github.iotopics/linux">Linux</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://ohohhh.github.iotags/linux%E5%91%BD%E4%BB%A4">linux命令</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  <p><strong>1&gt; 查看文件信息： ls</strong></p>
+
+
+
+
+<table class="pure-table pure-table-striped">
+  <thead><tr>
+    
+      <th> 参数 </th>
+    
+      <th> 含义 </th>
+    
+  </thead></tr>
+  <tbody>
+  
+    <tr>
+      
+      
+        <td> -a </td>
+      
+        <td> 显示指定目录下所有子目录与文件，包括隐藏文件 </td>
+      
+    </tr>
+  
+    <tr>
+      
+      
+        <td> -l </td>
+      
+        <td> 以列表方式显示文件的详细信息</td>
+      
+    </tr>
+  
+    <tr>
+      
+      
+        <td>-h </td>
+      
+        <td> 配合 -l 以人性化的方式显示文件大小</td>
+      
+    </tr>
+  
+  </tbody>
+</table>
+
+<p><strong>2&gt; 清屏：  clear</strong></p>
+
+<p><strong>3&gt; 切换工作目录: cd</strong></p>
+
+<p>Linux所有的⽬录和⽂件名⼤⼩写敏感
+
+
+
+<table class="pure-table pure-table-striped">
+  <thead><tr>
+    
+      <th> 命令 </th>
+    
+      <th> 含义 </th>
+    
+  </thead></tr>
+  <tbody>
+  
+    <tr>
+      
+      
+        <td> cd ~ </td>
+      
+        <td>  切换到当前用户的主目录</td>
+      
+    </tr>
+  
+    <tr>
+      
+      
+        <td> cd . </td>
+      
+        <td> 切换到当前目录 </td>
+      
+    </tr>
+  
+    <tr>
+      
+      
+        <td> cd . . </td>
+      
+        <td> 切换到上级目录 </td>
+      
+    </tr>
+  
+  </tbody>
+</table></p>
+
+<p><strong>4&gt; 显示当前路径：pwd</strong></p>
+
+<p><strong>5&gt; 创建目录：mkdir</strong></p>
+
+<p>通过mkdir命令可以创建一个新的目录。参数-p可递归创建目录。</p>
+
+<p><strong>6&gt; 删除文件：rm</strong></p>
+
+
+
+
+<table class="pure-table pure-table-striped">
+  <thead><tr>
+    
+      <th>参数</th>
+    
+      <th> 含义 </th>
+    
+  </thead></tr>
+  <tbody>
+  
+    <tr>
+      
+      
+        <td> -i </td>
+      
+        <td> 以进行交互式方式执行 </td>
+      
+    </tr>
+  
+    <tr>
+      
+      
+        <td> -f </td>
+      
+        <td> 强制删除，忽略不存在的文件，无需提示 </td>
+      
+    </tr>
+  
+    <tr>
+      
+      
+        <td> -r </td>
+      
+        <td> 递归地删除目录下的内容，删除文件夹时必须加此参数 </td>
+      
+    </tr>
+  
+  </tbody>
+</table>
+
+<p><strong>7&gt;拷贝文件:  cp</strong></p>
+
+<p>格式：</p>
+
+<pre><code>cp  源文件目录  目标目录
+</code></pre>
+
+<p><strong>8&gt;移动文件:  mv</strong></p>
+
+<p>以使用mv命令来移动文件或目录，也可以给文件或目录重命名。</p>
+
+<p><strong>9&gt;创建文件： touch</strong></p>
+
+<p>通过touch来创建一个空的文件，如  <code>touch demo.txt</code></p>
+
+<p><strong>10&gt;输出重定向：&gt;</strong></p>
+
+<p>将命令执行结果重定向到一个文件，本应显示在终端上的内容保存到指定文件中, 即修改了默认输出方向。</p>
+
+<p>如：<code>ls &gt; test.txt</code> ( test.txt 如果不存在，则创建，存在则覆盖其内容 )</p>
+
+<p>注意： &gt;输出重定向会覆盖原来的内容，&gt;&gt;输出重定向则会追加到⽂件的尾部。</p>
+
+<p><strong>11&gt;管道: |</strong></p>
+
+<p>管道：一个命令的输出可以通过管道做为另一个命令的输入。</p>
+
+<p><strong>12&gt;建立链接文件：ln</strong></p>
+
+<p>相当于创建快捷方式。</p>
+
+<p>格式:</p>
+
+<pre><code>ln 源⽂件 链接⽂件
+ln -s 源⽂件 链接⽂件
+</code></pre>
+
+<p>如果 没有-s 选项代表建立一个硬链接文件，两个文件占用相同大小的硬盘空间，即使删除了源文件，链接文件还是存在。
+注意：如果软链接文件和源文件不在同一个目录，源文件要使用绝对路径，不能使用相对路径。</p>
+
+<p><strong>13&gt;查看或者合并内容： cat</strong></p>
+
+<p>查看 test.txt 的文件内容:  <code>cat  test.txt</code>
+   合并这两个文件的内容： <code>cat test1.txt test2.txt &quot; test.txt</code></p>
+
+<p><strong>14&gt; 文本搜索：grep</strong></p>
+
+<p>格式：</p>
+
+<pre><code> grep  [-选项]  ‘搜索内容串’⽂件名
+</code></pre>
+
+
+
+
+<table class="pure-table pure-table-striped">
+  <thead><tr>
+    
+      <th>选项  </th>
+    
+      <th>  含义</th>
+    
+  </thead></tr>
+  <tbody>
+  
+    <tr>
+      
+      
+        <td> -v </td>
+      
+        <td> 显示不包含匹配文本的所有行（相当于求反） </td>
+      
+    </tr>
+  
+    <tr>
+      
+      
+        <td> -n </td>
+      
+        <td> 显示匹配行及行号 </td>
+      
+    </tr>
+  
+    <tr>
+      
+      
+        <td> -i </td>
+      
+        <td> 忽略大小写 </td>
+      
+    </tr>
+  
+  </tbody>
+</table>
+
+<p><strong>15&gt;归档管理：tar</strong></p>
+
+<p>常用的备份工具，此命令可以把一系列文件归档到一个大文件中，也可以把档案文件解开以恢复数据。</p>
+
+<p>格式:</p>
+
+<pre><code> tar [参数] 打包文件名 文件
+</code></pre>
+
+
+
+
+<table class="pure-table pure-table-striped">
+  <thead><tr>
+    
+      <th> 参数 </th>
+    
+      <th> 含义 </th>
+    
+  </thead></tr>
+  <tbody>
+  
+    <tr>
+      
+      
+        <td> -c </td>
+      
+        <td> 生成档案文件，创建打包文件  </td>
+      
+    </tr>
+  
+    <tr>
+      
+      
+        <td> -v </td>
+      
+        <td> 列出归档解档的详细过程，显示进度  </td>
+      
+    </tr>
+  
+    <tr>
+      
+      
+        <td> -f </td>
+      
+        <td> 指定档案文件名称，f后面一定是.tar文件，所以必须放选项最后 </td>
+      
+    </tr>
+  
+    <tr>
+      
+      
+        <td>-t </td>
+      
+        <td> 列出档案中包含的文件 </td>
+      
+    </tr>
+  
+    <tr>
+      
+      
+        <td>-x </td>
+      
+        <td> 解开档案文件</td>
+      
+    </tr>
+  
+  </tbody>
+</table>
+
+<p>注意：除了f需要放在参数的最后，其它参数的顺序任意。</p>
+
+<p><strong>16&gt; 文件解压缩: gzip</strong></p>
+
+<p>tar与gzip命令结合使用实现文件打包、压缩。 tar只负责打包文件，但不压缩，用gzip压缩tar打包后的文件，其扩展名一般用xxxx.tar.gz。在tar命令中增加一个选项(-z)可以调用gzip实现了一个压缩的功能，实行一个先打包后压缩的过程。</p>
+
+<p>格式：</p>
+
+<pre><code> gzip [选项] 被压缩⽂件
+</code></pre>
+
+<p><strong>17&gt;修改文件权限：chmod</strong></p>
+
+
+
+
+<table class="pure-table pure-table-striped">
+  <thead><tr>
+    
+      <th>[ u/g/o/a ] </th>
+    
+      <th> 含义 </th>
+    
+  </thead></tr>
+  <tbody>
+  
+    <tr>
+      
+      
+        <td> u</td>
+      
+        <td> user 表示该文件的所有者 </td>
+      
+    </tr>
+  
+    <tr>
+      
+      
+        <td>g</td>
+      
+        <td>group 表示与该文件的所有者属于同一组( group )者，即用户组 </td>
+      
+    </tr>
+  
+    <tr>
+      
+      
+        <td>o</td>
+      
+        <td>other 表示其他以外的人 </td>
+      
+    </tr>
+  
+    <tr>
+      
+      
+        <td> a</td>
+      
+        <td> all 表示这三者皆是 </td>
+      
+    </tr>
+  
+  </tbody>
+</table>
+
+
+
+
+<table class="pure-table pure-table-striped">
+  <thead><tr>
+    
+      <th> [ &#43;-= ] </th>
+    
+      <th> 含义 </th>
+    
+  </thead></tr>
+  <tbody>
+  
+    <tr>
+      
+      
+        <td> &#43; </td>
+      
+        <td> 增加权限 </td>
+      
+    </tr>
+  
+    <tr>
+      
+      
+        <td>-</td>
+      
+        <td> 撤销权限</td>
+      
+    </tr>
+  
+    <tr>
+      
+      
+        <td>=</td>
+      
+        <td>设定权限 </td>
+      
+    </tr>
+  
+  </tbody>
+</table>
+
+
+
+
+<table class="pure-table pure-table-striped">
+  <thead><tr>
+    
+      <th> 字母 </th>
+    
+      <th> 说明 </th>
+    
+  </thead></tr>
+  <tbody>
+  
+    <tr>
+      
+      
+        <td> r </td>
+      
+        <td> 读取权限，数字代号为 4 </td>
+      
+    </tr>
+  
+    <tr>
+      
+      
+        <td>w</td>
+      
+        <td> 写入权限，数字代号为 2</td>
+      
+    </tr>
+  
+    <tr>
+      
+      
+        <td> x</td>
+      
+        <td>  执行权限，数字代号为 1</td>
+      
+    </tr>
+  
+    <tr>
+      
+      
+        <td> - </td>
+      
+        <td>不具任何权限，数字代号为 0</td>
+      
+    </tr>
+  
+  </tbody>
+</table>
+
+<p>如执行：chmod u=rwx,g=rx,o=r filename 就等同于：chmod u=7,g=5,o=4 filename  简写： chmod 754 filenname</p>
+
+<p><strong>18&gt;退出登录账户： exit</strong></p>
+
+<p><strong>19&gt;查看登录用户：who</strong></p>
+
+<p><strong>20&gt;关机重启：shutdown</strong></p>
+
+
+
+
+<table class="pure-table pure-table-striped">
+  <thead><tr>
+    
+      <th> 命令 </th>
+    
+      <th>含义</th>
+    
+  </thead></tr>
+  <tbody>
+  
+    <tr>
+      
+      
+        <td> shutdown –r now </td>
+      
+        <td>重新启动操作系统 </td>
+      
+    </tr>
+  
+    <tr>
+      
+      
+        <td>shutdown –h now</td>
+      
+        <td> 立刻关机，其中now相当于时间为0的状态 </td>
+      
+    </tr>
+  
+    <tr>
+      
+      
+        <td> shutdown -h 20:25</td>
+      
+        <td>系统在今天的20:25 会关机 </td>
+      
+    </tr>
+  
+    <tr>
+      
+      
+        <td>shutdown -h &#43;10  </td>
+      
+        <td>系统再过十分钟后自动关机 </td>
+      
+    </tr>
+  
+    <tr>
+      
+      
+        <td>shutdown -a</td>
+      
+        <td>取消关机操作</td>
+      
+    </tr>
+  
+  </tbody>
+</table>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://ohohhh.github.io/post/hugo/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://ohohhh.github.io/post/hugo/">使用Hugo搭建个人博客</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://ohohhh.github.io/post/mysql%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E4%B9%8B%E6%9F%A5%E8%AF%A2/">Mysql基本使用之查询</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://ohohhh.github.io/post/mysql%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E4%B9%8B%E6%9F%A5%E8%AF%A2/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'Ohohhh';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</div>
+
+</div>
+</div>
+<script src="https://ohohhh.github.iojs/ui.js"></script>
+<script src="https://ohohhh.github.iojs/menus.js"></script>
+
+
+<script>
+  
+  if (window.location.hostname != "localhost") {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'Your Google Analytics tracking ID', 'auto');
+    ga('send', 'pageview');
+  }
+</script>
+
+
+
+
+
+</body>
+</html>
+
