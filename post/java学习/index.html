@@ -350,7 +350,7 @@ default-character-set=utf8</code></p>
 
 <p>+= 是一个运算符，只运算一次，并带有强制转换的特点， 也就是说 s += 1 就是 s = (short)(s + 1)</p>
 
-<pre><code class="language-short">short s = 1;
+<pre><code class="language-java">short s = 1;
 s += 1; // s = (short)(s+1)
 s = s + 1; // (s+1)为int--&gt;s为short   发生数据转换错误
 </code></pre>
@@ -606,15 +606,15 @@ String str2 = &quot;a&quot;;
 </code></pre>
 
 <ol>
-<li><p>String底层是数组，所以其为引用类型</p>
+<li>String底层是数组，所以其为引用类型</li>
+</ol>
 
-<pre><code>String str = &quot;abc&quot;; 
+<pre><code class="language-java"> String str = &quot;abc&quot;; 
 相当于：
 char data[] = {'a', 'b', 'c'}; 
 String str = new String(data); 
 // String底层是靠字符数组实现的。
-</code></pre></li>
-</ol>
+</code></pre>
 
 <p><strong>StringBuffer 和 StringBuilder的区别：</strong></p>
 
@@ -782,7 +782,7 @@ String str = new String(data);
 
 <p>格式:</p>
 
-<pre><code>synchronized(同步锁){ 
+<pre><code class="language-java">synchronized(同步锁){ 
 
 需要同步操作的代码 
 
@@ -797,7 +797,7 @@ String str = new String(data);
 
 <p><strong>线程池</strong>：</p>
 
-<pre><code>//1.创建线程池对象。
+<pre><code class="language-java">//1.创建线程池对象。
 ExecutorService pool =Executors.newFixedThreadPool(2);
 //2.创建Runnable接口子类对象。
 (task)ThreadPollDemo task = new ThreadPollDemo();
@@ -853,7 +853,7 @@ pool.shutdown();// 关闭线程池
 
 <p><strong>java.io.FileOutputStream</strong> 类是文件输出流，用于将数据写出到文件。</p>
 
-<pre><code>// 使用文件名称创建流对象 
+<pre><code class="language-java">// 使用文件名称创建流对象 
 FileOutputStream f = new FileOutputStream(&quot;f.txt&quot;);
 </code></pre>
 
@@ -869,43 +869,45 @@ fos.close();
 </code></pre>
 
 <ol>
-<li><p><strong>追加数据</strong>:public FileOutputStream(File file/String name, boolean append)  创建文件输出流以写入由指定的 File对象或文件名字表示的 文件。 参数中都需要传入一个boolean类型的值， true 表示追加数据， false 表示清空原有数据。</p>
-
-<pre><code>FileOutputStream f = new FileOutputStream(&quot;f.txt&quot;,true);
-f.write(&quot;\r\n&quot;.getBytes());  // 追加换行符
-</code></pre></li>
+<li><strong>追加数据</strong>:public FileOutputStream(File file/String name, boolean append)  创建文件输出流以写入由指定的 File对象或文件名字表示的 文件。 参数中都需要传入一个boolean类型的值， true 表示追加数据， false 表示清空原有数据。</li>
 </ol>
+
+<pre><code class="language-java">FileOutputStream f = new FileOutputStream(&quot;f.txt&quot;,true);
+f.write(&quot;\r\n&quot;.getBytes());  // 追加换行符
+</code></pre>
 
 <p><strong>java.io.FileInputStream</strong> 类是文件输入流，从文件中读取字节。</p>
 
-<pre><code>// 使用文件名称创建流对象
+<pre><code class="language-java">// 使用文件名称创建流对象
 FileInputStream fis = new FileInputStream(&quot;s.txt&quot;);
 </code></pre>
 
 <ol>
-<li><p><strong>读取字节</strong>： read 方法，每次可以读取一个字节的数据，提升为int类型，读取到文件末尾，返回 -1</p>
+<li><strong>读取字节</strong>： read 方法，每次可以读取一个字节的数据，提升为int类型，读取到文件末尾，返回 -1</li>
+</ol>
 
-<pre><code>int read = fis.read(); 
+<pre><code class="language-java">int read = fis.read(); 
 System.out.println((char) read);
 // 循环读取
 int b;
 while ((b = fis.read())!=‐1) { System.out.println((char)b); }
-</code></pre></li>
+</code></pre>
 
-<li><p><strong>使用字节数组读取</strong>： read(byte[] b) ，每次读取b的长度个字节到数组中，返回读取到的有效字节个数，读 取到末尾时，返回 -1 ，</p>
+<ol>
+<li><strong>使用字节数组读取</strong>： read(byte[] b) ，每次读取b的长度个字节到数组中，返回读取到的有效字节个数，读 取到末尾时，返回 -1 ，</li>
+</ol>
 
-<pre><code>int len ； 
+<pre><code class="language-java">int len ； 
 // 定义字节数组，作为装字节数据的容器 
 byte[] b = new byte[2]; 
 // 循环读取
 while (( len= fis.read(b))!=‐1){ 
 // 每次读取后,把数组的有效字节部分，变成字符串打印 System.out.println(new String(b，0，len));// len 每次读取的有效字节个数 }
-</code></pre></li>
-</ol>
+</code></pre>
 
 <p><strong>写出字符串</strong>:</p>
 
-<pre><code>// 使用文件名称创建流对象 
+<pre><code class="language-java">// 使用文件名称创建流对象 
 FileWriter fw = new FileWriter(&quot;fw.txt&quot;);
 // 字符串数组形式
 char [] b = &quot;好好学习&quot;.toCharArray();
