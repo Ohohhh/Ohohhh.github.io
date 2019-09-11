@@ -418,6 +418,18 @@ $ git push -u origin master
 
 <p>然后浏览器里访问：<a href="https://ohohhh.github.io/">https://ohohhh.github.io/</a>  即可看到刚刚搭建的博客。</p>
 
+<p>发布博客：</p>
+
+<pre><code class="language-–新建博客markdown文件，并编辑博客内容(文件名为">hugo new post/newBlog.md
+–生成静态页面
+hugo --theme=blackburn --buildDrafts --baseUrl=“https://ohohhh.github.io/”
+—发布
+cd public
+git add .
+git commit -m “new blog added”
+git push origin master
+</code></pre>
+
 
   
 <div class="prev-next-post pure-g">
