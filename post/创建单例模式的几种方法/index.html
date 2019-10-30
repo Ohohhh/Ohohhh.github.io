@@ -264,6 +264,8 @@
 
   <p><strong>单例模式：</strong>保证一个类仅有一个实例，并提供一个访问它的全局访问点。</p>
 
+<p><br></p>
+
 <p><strong>饿汉式（线程不安全）</strong>：类加载时就创建该单例</p>
 
 <pre><code class="language-java">public class Singleton {
@@ -281,6 +283,8 @@
     }
 }
 </code></pre>
+
+<p><br></p>
 
 <p><strong>懒汉式</strong>：用的时候再创建单例</p>
 
@@ -300,6 +304,8 @@
     }
 }
 </code></pre>
+
+<p><br></p>
 
 <p><strong>懒汉式双重加锁版（推荐）</strong>：</p>
 
@@ -327,6 +333,8 @@
 }
 </code></pre>
 
+<p><br></p>
+
 <p><strong>静态内部类方式（推荐）</strong>：</p>
 
 <pre><code class="language-java">public class Singleton {
@@ -342,6 +350,8 @@
     }
 }
 </code></pre>
+
+<p><br></p>
 
 <p><strong>枚举类：</strong> 当涉及到反序列化创建对象时，使用枚举类方式</p>
 
