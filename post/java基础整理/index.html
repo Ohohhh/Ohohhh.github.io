@@ -266,12 +266,16 @@
 
 <h2 id="基础知识">基础知识</h2>
 
+<p><br></p>
+
 <p><strong>配置环境变量：</strong></p>
 
 <ol>
 <li>点击系统变量的 新建 ，创建新的环境变量，变量名输入 JAVA_HOME ，变量值输入JDK9的安装目录</li>
 <li>选中 Path 环境变量，点击新建，键入%JAVA_HOME%\bin</li>
 </ol>
+
+<p><br></p>
 
 <p><strong>IDEA快捷键：</strong></p>
 
@@ -341,11 +345,15 @@
 </tbody>
 </table>
 
+<p><br></p>
+
 <p><strong>JVM</strong>（Java Virtual Machine ）：Java虚拟机，，我们编写的Java代码，都运行在 JVM 之上。</p>
 
 <p><strong>JRE</strong> (Java Runtime Environment) ：是Java程序的运行时环境，包含 JVM 和运行时所需要的 核心类库 。</p>
 
 <p><strong>JDK</strong> (Java Development Kit)：是Java程序开发工具包，包含 JRE 和开发人员使用的工具。</p>
+
+<p><br></p>
 
 <p><strong>JDK排查故障命令行工具：</strong></p>
 
@@ -367,6 +375,8 @@
 <li><strong>jstack</strong> (Stack Trace for Java):生成虚拟机当前时刻的线程快照，线程快照就是当前虚拟机内每一条线程正在执行的方法堆栈的集合。使用 ：  jstack  线程id</li>
 </ul>
 
+<p><br></p>
+
 <p><strong>Java中都是采用的值传递：</strong></p>
 
 <p>一个方法可以修改传递引用所对应的变量值，而不能修改传递值调用所对应的变量值。</p>
@@ -384,6 +394,8 @@
     }
 </code></pre>
 
+<p><br></p>
+
 <p><strong>标识符</strong>：在程序中我们自己定义内容 ，比如类、方法、变量的名字。</p>
 
 <ul>
@@ -391,6 +403,8 @@
 <li>不能以数字开头</li>
 <li>以字母、数字、$美元符号、_下划线组成</li>
 </ul>
+
+<p><br></p>
 
 <p><strong>字节</strong>：计算机最小存储单元。8个bit（二进制位） 0000-0000表示为1个字节，写成1 byte或者1 B。</p>
 
@@ -401,6 +415,8 @@
 <pre><code class="language-java">数据类型 变量名 = 数据值；
 </code></pre>
 
+<p><br></p>
+
 <p><strong>Java数据类型</strong>：</p>
 
 <p>基本数据类型：整数、浮点数、字符、布尔
@@ -408,16 +424,22 @@
 
 <p>Java中的字符串String属于引用数据类型。因为String是一个类，底层是由数组构成。</p>
 
+<p><br></p>
+
 <p>数据转换：范围小的向范围大的类型转，<code>byte</code>,<code>short</code>,<code>char</code>运算时会自动向<code>int</code>转</p>
 
 <blockquote>
 <p>byte、short、char‐‐&gt;int‐‐&gt;long‐‐&gt;float‐‐&gt;double</p>
 </blockquote>
 
+<p><br></p>
+
 <ul>
 <li><strong>装箱</strong>：将基本类型用它们对应的引用类型包装起来；</li>
 <li><strong>拆箱</strong>：将包装类型转换为基本数据类型；</li>
 </ul>
+
+<p><br></p>
 
 <p>除了浮点型的两种包装类 其他包装类都有缓存池 ，short,long,Integer范围在 [-128 127]</p>
 
@@ -425,6 +447,8 @@
 ;Integer i4 = 222;
 System.out.println(i3 == i4);  // false 超出缓存池范围
 </code></pre>
+
+<p><br></p>
 
 <p>+= 是一个运算符，只运算一次，并带有强制转换的特点， 也就是说 s += 1 就是 s = (short)(s + 1)</p>
 
@@ -435,6 +459,8 @@ s = s + 1; // (s+1)为int--&gt;s为short   发生数据转换错误
 
 <p>混合运算时，++i 先自加1 再赋值， i++ 先赋值再自加1，独立运算时无影响。</p>
 
+<p><br></p>
+
 <p><strong>注意:</strong>  i++ 是线程不安全的 当多个线程同时对i 进行操作 因为线程私有 有自己的工作内存，当线程a从主存中读取共享变量i 到自己的内存然后进行操作 但是操作完还没有保存到主存， 这时候线程b拿到的 i 就是个脏数据。</p>
 
 <p><strong>如何解决：</strong></p>
@@ -443,6 +469,8 @@ s = s + 1; // (s+1)为int--&gt;s为short   发生数据转换错误
 <li>对 i++ 操作加同步锁 保证每次只有一个线程执行。</li>
 <li>使用 java.util.concurrent.atomic.AtomicInteger ,它支持原子性操作</li>
 </ol>
+
+<p><br></p>
 
 <p><strong>| 和 || 的区别：</strong></p>
 
@@ -454,6 +482,8 @@ s = s + 1; // (s+1)为int--&gt;s为short   发生数据转换错误
 
 <p><code>System.out.println(3|9);  // 11</code></p>
 
+<p><br></p>
+
 <p><strong>三元运算符</strong>格式：</p>
 
 <p><code>数据类型 变量名 = 布尔类型表达式？ 结果1：结果2</code></p>
@@ -462,8 +492,12 @@ s = s + 1; // (s+1)为int--&gt;s为short   发生数据转换错误
 
 <p>布尔类型表达式结果是false，三元运算符整体结果为结果2，赋值给变量。</p>
 
+<p><br></p>
+
 <p><strong>break 使用场景：</strong>终止switch或者循环。switch中由于case存在穿透性，所以要写break跳出循环。
 continue 使用场景：结束本次循环，继续下一次的循环。</p>
+
+<p><br></p>
 
 <p><strong>==与equals()的区别：</strong></p>
 
@@ -476,11 +510,17 @@ continue 使用场景：结束本次循环，继续下一次的循环。</p>
 <li>情况2：类覆盖了 equals() 方法。一般，我们都覆盖 equals() 方法来比较两个对象的内容是否相等；若它们的内容相等，则返回 true (即，认为这两个对象相等)。</li>
 </ul>
 
+<p><br></p>
+
 <p><strong>方法重载(overload)</strong>：静态绑定，指在同一个类中，允许存在一个以上的同名方法，只要它们的参数列表(参数个数或参数类型)不同即可，与修饰符和返回值类型无关 。</p>
 
 <p><strong>方法重写（override）</strong>: 动态绑定，子类对父类的允许访问的方法的实现过程进行重新编写, 返回值和形参都不能改变。即<strong>声明不变，重新实现</strong>！。</p>
 
+<p><br></p>
+
 <p>private，static修饰的方法和构造器不能够重写因为它们都是静态绑定（在编译过程中就已经知道这个方法到底是哪个类中的方法）的。构造器只能重载不能重写。</p>
+
+<p><br></p>
 
 <p><strong>Java三大特性：</strong></p>
 
@@ -516,6 +556,8 @@ continue 使用场景：结束本次循环，继续下一次的循环。</p>
 }
 </code></pre>
 
+<p><br></p>
+
 <pre><code class="language-java">T&lt;? super B&gt;： ？是 B 的父类 下界通配符 可add()B及B的子类 因为jvm支持向上转型 不可get() 因为不知道用那个父类来存放get到的对象只有用所有类的基类Object来存 不会报错
 T&lt;? extends B&gt;   ？是 B的子类  上界通配符  不可add() 因为子类类型还不确定 可以get() 因为取的都可以用B来存
 public static void main(String[] args) {
@@ -532,6 +574,8 @@ public static void main(String[] args) {
         // Apple apple = apples1.get(0);  报错 其父类不确定 所以用Apple不知道能否装得下来
     }
 </code></pre>
+
+<p><br></p>
 
 <p><strong>JVM内存划分：</strong></p>
 
@@ -576,6 +620,8 @@ public static void main(String[] args) {
 </tbody>
 </table>
 
+<p><br></p>
+
 <h2 id="数组-类-对象-接口">数组，类，对象，接口</h2>
 
 <p><strong>数组</strong>格式：</p>
@@ -586,12 +632,16 @@ public static void main(String[] args) {
 
 <p><code>数据类型[] 数组名 = {元素1,元素2,元素3...}</code></p>
 
+<p><br></p>
+
 <p><strong>数组和集合的区别（Array和ArrayList的区别：）</strong>：</p>
 
 <ol>
 <li>数组声明了它容纳的元素的类型，而集合不声明。集合存储的都是对象。而且对象的类型可以不一致。</li>
 <li>数组是静态的，一个数组实例具有固定的大小，一旦创建了就无法改变容量了。而集合是可以动态扩展容量，可以根据需要动态改变大小，集合提供更多的成员方法，能满足更多的需求。</li>
 </ol>
+
+<p><br></p>
 
 <p><strong>数组的工具类 ：Arrays类</strong></p>
 
@@ -602,6 +652,8 @@ public static void main(String[] args) {
 <p><code>Arrays.asList()</code> 数组转集合 方法返回的并不是 <code>java.util.ArrayList</code> ，而是 <code>java.util.Arrays</code> 的一个内部类,这个内部类并没有实现集合的修改方法或者说并没有重写这些方法，所以返回集合的不能add，remove，clear 操作；</p>
 
 <p><strong>解决方式：</strong> <code>List list = new ArrayList&lt;&gt;(Arrays.asList(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;))</code></p>
+
+<p><br></p>
 
 <p><strong>copeOf和 arraycopy 的区别：</strong></p>
 
@@ -616,9 +668,13 @@ System.arraycopy(s1,0,s2,0,3);
 System.out.println(Arrays.toString(s2));
 </code></pre>
 
+<p><br></p>
+
 <p><strong>面向对象与面向过程的区别</strong>：</p>
 
 <p>​   面向对象强调的是通过调用对象的行为来实现功能，而面向过程需要一步一步去实现。</p>
+
+<p><br></p>
 
 <p><strong>类与对象的关系：</strong></p>
 
@@ -628,11 +684,15 @@ System.out.println(Arrays.toString(s2));
 <li>类是对象的模板，对象是类的实体。</li>
 </ul>
 
+<p><br></p>
+
 <p><strong>class.forName和ClassLoader的区别：</strong></p>
 
 <p>class.forName动态加载类到jvm中，会加载.class文件和静态代码块。</p>
 
 <p>ClassLoader只加载.class文件到jvm</p>
+
+<p><br></p>
 
 <p><strong>什么是双亲委派模型：</strong></p>
 
@@ -641,6 +701,8 @@ System.out.println(Arrays.toString(s2));
 <p><strong>好处：</strong></p>
 
 <p>双亲委派模型保证了Java程序的稳定运行，可以避免类的重复加载（JVM 区分不同类的方式不仅仅根据类名，相同的类文件被不同的类加载器加载产生的是两个不同的类）</p>
+
+<p><br></p>
 
 <p><strong>创建对象的方式：</strong></p>
 
@@ -651,6 +713,8 @@ System.out.println(Arrays.toString(s2));
 <li>反序列化，比如调用 ObjectInputStream 类的 readObject() 方法</li>
 </ol>
 
+<p><br></p>
+
 <p><strong>new和getInstance的区别：</strong></p>
 
 <ol>
@@ -658,6 +722,8 @@ System.out.println(Arrays.toString(s2));
 <li>getInstance是单例模式的，new可以创建多个新的实例对象 。</li>
 <li>对于抽象类，不能new，所以只能通过getInstance得到其实例对象。</li>
 </ol>
+
+<p><br></p>
 
 <p><strong>Java创建对象的过程：</strong></p>
 
@@ -669,6 +735,8 @@ System.out.println(Arrays.toString(s2));
 <li>执行init方法：当为对象按照自己的意愿初始化时执行，如为对象起别名。</li>
 </ol>
 
+<p><br></p>
+
 <p><strong>怎么判断一个对象已经死亡：</strong></p>
 
 <pre><code>1. **引用计数法**：给对象中添加一个引用计数器，每当有一个地方引用它，计数器就加 1；当引用失效，计数器就减 1；任何时候计数器为 0 的对象就是不可能再被使用的。但是**它很难解决对象之间相互循环引用的问题**
@@ -678,6 +746,8 @@ System.out.println(Arrays.toString(s2));
 <li><strong>可达性分析</strong>: 通过一系列的称为 <strong>“GC Roots”</strong> 的对象作为起点，从这些节点开始向下搜索，节点所走过的路径称为引用链，当一个对象到 GC Roots 没有任何引用链相连的话，则证明此对象是不可用的。</li>
 </ol>
 
+<p><br></p>
+
 <p>类需要同时满足下面 3 个条件才能算是 <strong>“无用的类”</strong> ：</p>
 
 <ol>
@@ -685,6 +755,8 @@ System.out.println(Arrays.toString(s2));
 <li>加载该类的 ClassLoader 已经被回收。</li>
 <li>该类对应的 java.lang.Class 对象没有在任何地方被引用，无法在任何地方通过反射访问该类的方法。</li>
 </ol>
+
+<p><br></p>
 
 <p><strong>成员变量与局部变量的区别</strong>：</p>
 
@@ -704,6 +776,8 @@ System.out.println(Arrays.toString(s2));
 
 <p>当成员变量用<code>private</code>关键字修饰时，本类中可提供set/get方法来访问私有变量，其中<code>this.成员变量</code> 为了解决形参和成员变量重名导致的成员变量被隐藏问题，从而无法赋值。</p>
 
+<p><br></p>
+
 <p><strong>static和abstract：</strong></p>
 
 <p><strong>static</strong>:用来修饰的成员变量和成员方法，被修饰的成员是<strong>属于类</strong>的，而不是单单是属 于某个对象的。也就是说，既然属于类，就可以不靠创建对象来调用了。</p>
@@ -716,11 +790,15 @@ System.out.println(Arrays.toString(s2));
 
 <p>静态代码块：定义在成员位置，使用static修饰的代码块{ }。</p>
 
-<p>位置：类中方法外。 随着类的加载而执行且执行一次，优先于main方法和构造方法的执行。</p>
+<p><strong>位置</strong>：类中方法外。 随着类的加载而执行且执行一次，优先于main方法和构造方法的执行。</p>
+
+<p><br></p>
 
 <p><strong>abstract</strong>:使用 abstract关键字修饰方法，该方法就成了抽象方法，抽象方法只包含一个方法名，而没有方法体,所以抽象类中不需要创建对象。
 抽象方法 ： 没有方法体的方法。抽象类：包含抽象方法的类。
 继承抽象类的子类必须重写父类所有的抽象方法。</p>
+
+<p><br></p>
 
 <p><strong>接口和抽象类的区别：</strong></p>
 
@@ -737,6 +815,8 @@ System.out.println(Arrays.toString(s2));
 
 <p>在 JDK1.8后，接口也可以包含静态方法，static修饰。</p>
 
+<p><br></p>
+
 <p><strong>Scanner类的使用</strong>：</p>
 
 <pre><code class="language-java">// 获取键盘输入  方法一：
@@ -751,6 +831,8 @@ BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
 
 
 </code></pre>
+
+<p><br></p>
 
 <p><strong>Random类的使用：</strong></p>
 
@@ -767,6 +849,8 @@ int c = ThreadLocalRandom.current().nextInt(0, 10);
 
 </code></pre>
 
+<p><br></p>
+
 <p><strong>工具类Math类的使用：</strong></p>
 
 <pre><code class="language-java">Math.abs(-5)  // 5 返回绝对值
@@ -777,6 +861,8 @@ Math.round(-5.5)  // -5 负数时，-0.5直接舍弃
 
 
 </code></pre>
+
+<p><br></p>
 
 <h2 id="string">String</h2>
 
@@ -847,6 +933,8 @@ String str = new String(data);
 
 </code></pre>
 
+<p><br></p>
+
 <p><strong>常用方法：</strong></p>
 
 <ul>
@@ -862,13 +950,19 @@ String str = new String(data);
 <li><code>public String[] split(String regex,int limit)</code>：将此字符串按照给定的regex（正则表达式规则）拆分为字符串数组，limit 为分割的次数。</li>
 </ul>
 
+<p><br></p>
+
 <p><strong>StringBuffer 和 StringBuilder的区别：</strong></p>
 
 <p>​   StringBuffer支持并发操作，线性安全的,加了同步锁，适 合多线程中使用。</p>
 
 <p>​   StringBuilder不支持并发操作，线性不安全的，不适合多线程中使用。StringBuilder类不是线程安全的，但其在单线程中的性能比StringBuffer高。</p>
 
+<p><br></p>
+
 <p>阿里巴巴规范中表示：<strong>不建议在 for 循环中使用”+”号操作符进行字符串拼接</strong>，而是使用StringBuilder的append方法，因为前者会创建大量StringBuilder对象（+操作符源码中实际是调用的StringBuilder）导致性能低下,而后者始终只有一个StringBuilder对象。</p>
+
+<p><br></p>
 
 <p>扩展：也可以使用<strong>StringUtils.join</strong>进行字符串拼接，该方法不用担心 NullPointerException。</p>
 
@@ -884,7 +978,7 @@ String message = String.join(&quot;-&quot;, &quot;我&quot;, &quot;太特么&quo
 
 </code></pre>
 
-<p>​</p>
+<p>​   <br></p>
 
 <h2 id="集合">集合</h2>
 
@@ -896,6 +990,8 @@ String message = String.join(&quot;-&quot;, &quot;我&quot;, &quot;太特么&quo
 <li>list：可重复 有索引 有顺序的</li>
 <li>set：无重复  无索引不能使用普通for循环遍历 用增强for</li>
 </ul>
+
+<p><br></p>
 
 <p>List的子类：<code>ArrayList</code> , <code>LinkedList</code></p>
 
@@ -909,13 +1005,19 @@ String message = String.join(&quot;-&quot;, &quot;我&quot;, &quot;太特么&quo
 <li>都是不同步，他们都是线程不安全的。需要线程安全可使用Vector类取代ArryList，它的所有方法都是同步的，只是在一个线程访问时会浪费大量时间在同步操作上。线程安全优先考虑性能最佳的<strong>CopyOnWriteArrayList</strong>（读操作不改变源码就没加锁，写操作是操作的副本 改动完再把原内存指针指向改动后的内存）。</li>
 </ol>
 
+<p><br></p>
+
 <p>java.util.ArrayList 是大小<strong>可变的数组</strong>的实现，称为集合类。</p>
+
+<p><br></p>
 
 <p>构造格式：</p>
 
 <p><code>ArrayList&lt;E&gt; list = new ArrayList&lt;&gt;();</code></p>
 
 <p>E为泛型，可替换成你所用的<strong>引用类型</strong></p>
+
+<p><br></p>
 
 <p>常用方法：</p>
 
@@ -926,11 +1028,17 @@ String message = String.join(&quot;-&quot;, &quot;我&quot;, &quot;太特么&quo
 <li><code>public int size()</code>：返回此集合中的元素数。遍历集合时，可以控制索引范围，防止越界。</li>
 </ul>
 
+<p><br></p>
+
 <p>ArrayList对象不能存储基本类型，只能存储引用类型的数据。类似 <strong><int></strong> 不能写，但是存储基本数据类型对应的 包装类型是可以的。</p>
 
 <p>只有int-&gt; Integer 和 char&gt;Character 需要特殊记忆，其他基本类型只是首字母大写即可。</p>
 
+<p><br></p>
+
 <p>set的子类：<code>Hashset</code> , <code>LinkedHashSet</code></p>
+
+<p><br></p>
 
 <p>给HashSet中存放自定义类型元素时，需要<strong>重写对象中的hashCode和equals方法</strong>，建立自己的比较方式，才能保 证HashSet集合中的对象唯一。</p>
 
@@ -938,6 +1046,8 @@ String message = String.join(&quot;-&quot;, &quot;我&quot;, &quot;太特么&quo
 
 <p>HashSet保证元素唯一，可是元素存放进去是没有顺序的
 为了保证有序使用 LinkedHashSet ，它是链表和哈希表组合的一个数据存储结构</p>
+
+<p><br></p>
 
 <p><strong>可变参数</strong></p>
 
@@ -951,30 +1061,48 @@ String message = String.join(&quot;-&quot;, &quot;我&quot;, &quot;太特么&quo
 
 <p>但是可以省去创建数组的步骤直接传值</p>
 
+<p><br></p>
+
 <p><strong>泛型</strong>：可以在类或方法中预支地使用未知的类型。
 一般在创建对象时，将未知的类型确定具体的类型。当没有指定泛型时，默认类型为Object类型。
 泛型的通配符:不知道使用什么类型来接收的时候,此时可以使用?,?表示未知通配符。</p>
+
+<p><br></p>
 
 <p><strong>Comparable和Comparator的区别：</strong></p>
 
 <p>Comparable: 自然排序，只有一个compareTo方法 内部较器 耦合度较高
 Comparator:  自定义排序  有compare 和 equals 两个方法  外部比较器 易维护* 如果实现类没有实现Comparable接口，又想对两个类进行比较（或者实现类实现了Comparable接口，但是对compareTo方法内的比较算法不满意），那么可以实现Comparator接口</p>
 
+<p><br></p>
+
 <p><strong>map:</strong></p>
 
 <p>Collection 中的集合称为单列集合， Map 中的集合称为双列集合。 需要注意的是， Map 中的集合不能包含重复的键，值可以重复；每个键只能对应一个值。</p>
 
+<p><br></p>
+
 <p>Map 的子类：<code>HashMap</code>集合、<code>LinkedHashMap</code>、<code>HashTable</code>集合。</p>
+
+<p><br></p>
 
 <p><strong>HashMap</strong>：内部实现为数组+链表+红黑树（jdk1.8增加的），链表的存在是为了解决哈希冲突，当链表长度大于8时转为红黑树。元素的存取顺序不能保证一致,，允许键一次为null，值多次为null。由于要保证键的唯一、不重复，需 要重写键的hashCode()方法、equals()方法。 非线程安全(保证线程安全使用ConcurrentHashMap)。</p>
 
 <p><a href="https://zhuanlan.zhihu.com/p/21673805">HashMap源码分析</a></p>
 
+<p><br></p>
+
 <p><strong>HashTabel</strong>：和HashMap大同小异，主要差异在于HashTable不允许键或值为null不然会报空指针异常。加了同步代码块，线程安全，但效率低下，被舍弃。</p>
+
+<p><br></p>
 
 <p><strong>LinkedHashMap</strong>：HashMap的子类，存储数据采用的哈希表结构+链表结构。通过链 表结构可以保证元素的存取顺序一致；通过哈希表结构可以保证的键的唯一、不重复，需要重写键的 hashCode()方法、equals()方法。</p>
 
+<p><br></p>
+
 <p><strong>ConcurrentHashMap(分段锁)</strong>:与HashTable不同的是这里采用分段式加锁来解决线程安全问题，保证了并发操作下的线程安全。JDK1.8之后取消了Segment分段锁，采用CAS和synchronized来保证并发下线程安全，只锁定链表或红黑二叉树首节点效率更高。</p>
+
+<p><br></p>
 
 <p>常用方法：</p>
 
@@ -990,23 +1118,33 @@ Comparator:  自定义排序  有compare 和 equals 两个方法  外部比较�
 
 <p><code>public Set&lt;Map.Entry&lt;K,V&gt;&gt; entrySet()</code>: 获取到Map集合中所有的键值对对象的集合(Set集合)，通过键值对(Entry)对象，获取Entry对象中的键与值。 方法提示: getkey() getValue() 。</p>
 
+<p><br></p>
+
 <p><strong>of（）方法：</strong></p>
 
 <p>of()方法只是Map，List，Set这三个接口的静态方法，其父类接口和子类实现并没有这类方法，比如 HashSet，ArrayList等； 2:返回的集合是不可变的 所以不能再add 等操作!</p>
+
+<p><br></p>
 
 <h2 id="多线程">多线程</h2>
 
 <p>使用多线程时，<strong>不是多线程能提升程序的执行速度</strong>，使用多线程是为了<strong>更好地利用CPU资源</strong>！多线程是CPU通过给每个线程<strong>分配CPU时间片来实现</strong>的。</p>
 
+<p><br></p>
+
 <p><strong>并发</strong>：指两个或多个事件在<strong>同一个时间段内</strong>发生。 同一实体上的多个事件。</p>
 
 <p><strong>并行</strong>：指两个或多个事件在<strong>同一时刻</strong>发生（同时发生）。不同实体上的多个事件。</p>
+
+<p><br></p>
 
 <p><strong>进程是操作系统分配资源的单位。</strong></p>
 
 <p><strong>线程(Thread)是进程的一个实体，是CPU调度和分派的基本单位。</strong></p>
 
 <p>进程在执行过程中拥有独立的内存单元，而多个线程共享内存，从而极大地提高了程序的运行效率</p>
+
+<p><br></p>
 
 <p><strong>各进程是相互独立的，那他们怎么通信的呢？</strong></p>
 
@@ -1019,7 +1157,11 @@ Comparator:  自定义排序  有compare 和 equals 两个方法  外部比较�
 <li>Socket: 上述的都是在同一主机上的多进程通信方式，而socket则可以用于不同主机之间 。</li>
 </ul>
 
+<p><br></p>
+
 <p><strong>进程的调度算法</strong>是指：根据系统的资源分配策略所规定的资源分配算法。常用的调度算法有：先来先服务调度算法、时间片轮转调度法、短作业优先调度算法、最短剩余时间优先、高响应比优先调度算法、优先级调度算法等等。</p>
+
+<p><br></p>
 
 <p><strong>实现Runnable接口比继承Thread类所具有的优势：</strong></p>
 
@@ -1030,6 +1172,8 @@ Comparator:  自定义排序  有compare 和 equals 两个方法  外部比较�
 <li>线程池只能放入实现Runable或Callable类线程，不能直接放入继承Thread的类。</li>
 </ol>
 
+<p><br></p>
+
 <p><strong>sleep()和wait()的区别：</strong></p>
 
 <ol>
@@ -1037,6 +1181,8 @@ Comparator:  自定义排序  有compare 和 equals 两个方法  外部比较�
 <li>sleep()属于Thread线程类，wait()属于Object类</li>
 <li>调用sleep()可以 自动苏醒，调用wait()则必须需要别的线程调用同一个对象上的notify()或者notifyAll()方法来唤醒</li>
 </ol>
+
+<p><br></p>
 
 <p><strong>同步：</strong>方法调用需要等待返回结果</p>
 
@@ -1046,9 +1192,13 @@ Comparator:  自定义排序  有compare 和 equals 两个方法  外部比较�
 
 <p><strong>非阻塞：</strong>不用等待结果返回结果</p>
 
+<p><br></p>
+
 <p>同步异步是相对于被调用者而言的</p>
 
 <p>阻塞非阻塞是相对于调用者而言的</p>
+
+<p><br></p>
 
 <p><strong>同步问题</strong>：当我们使用多个线程访问同一资源的时候，且多个线程中对资源有写的操作，就容易出现线程安全问题。</p>
 
@@ -1071,6 +1221,8 @@ Comparator:  自定义排序  有compare 和 equals 两个方法  外部比较�
 
 <p><code>public void unlock()</code> :释放同步锁。</p>
 
+<p><br></p>
+
 <p><strong>日期类优化建议：</strong></p>
 
 <p><code>SimpleDateFormat</code> 不是线程安全的</p>
@@ -1087,6 +1239,8 @@ Comparator:  自定义排序  有compare 和 equals 两个方法  外部比较�
 
 <p>JDK8之后，建议使用<code>instant</code>代替<code>Date</code>，<code>Localdatetime</code>代替<code>Calendar</code>，<code>Datetimeformatter</code>代替<code>Simpledateformatter</code>，
 官方给出的解释：simple beautiful strong immutable(不变) thread-safe</p>
+
+<p><br></p>
 
 <p><strong>线程池</strong>：</p>
 
@@ -1134,6 +1288,8 @@ hreadPoolExecutor.shutdown();
 
 </code></pre>
 
+<p><br></p>
+
 <p><strong>源码总结：</strong></p>
 
 <ol>
@@ -1142,6 +1298,8 @@ hreadPoolExecutor.shutdown();
 <li>抽象类AbstractExecutorService实现了ExecutorService接口，基本实现了ExecutorService中声明的所有方法</li>
 <li>然后ThreadPoolExecutor继承了类AbstractExecutorService。</li>
 </ol>
+
+<p><br></p>
 
 <p><strong>ThreadPoolExecutor类中几个重要参数和方法：</strong></p>
 
@@ -1158,7 +1316,11 @@ hreadPoolExecutor.shutdown();
 
 </code></pre>
 
-<p>参数解释：</p>
+<p><br></p>
+
+<p><strong>参数解释：</strong></p>
+
+<p><br></p>
 
 <pre><code>`corePoolSize`: 核心池大小，在创建了线程池后，线程池中的线程数为0，当有任务来之后，就会创建一     个线程去执行任务，当线程池中的线程数目达到corePoolSize后，就会把到达的任务放到缓存队列当中。
 </code></pre>
@@ -1175,7 +1337,9 @@ hreadPoolExecutor.shutdown();
 
 <p>​   <code>handler</code>：表示当拒绝处理任务时的策略</p>
 
-<p>方法解释：</p>
+<p><br></p>
+
+<p><strong>方法解释：</strong></p>
 
 <ol>
 <li>execute()方法实际上是Executor中声明的方法，在ThreadPoolExecutor进行了具体的实现，这个方法是ThreadPoolExecutor的核心方法，通过这个方法可以向线程池提交一个任务，交由线程池去执行。</li>
@@ -1183,6 +1347,8 @@ hreadPoolExecutor.shutdown();
 <li>shutdown() (不会立即关闭)和shutdownNow() （立即关闭）是用来关闭线程池的。</li>
 <li>还有一大波get的方法， 可以获取与线程池相关属性的方法。</li>
 </ol>
+
+<p><br></p>
 
 <p><strong>Lambda</strong>:</p>
 
@@ -1195,6 +1361,8 @@ hreadPoolExecutor.shutdown();
 <li>方法的参数或局部变量类型必须为Lambda对应的接口类型，才能使用Lambda作为该接口的实例。<br /></li>
 </ol>
 
+<p><br></p>
+
 <p>**面试题： **</p>
 
 <p><strong>各线程循环等待某一任务执行完成再一同执行  （100米赛跑）</strong></p>
@@ -1203,6 +1371,8 @@ hreadPoolExecutor.shutdown();
 
 <pre><code>        CyclicBarrier  循环栅栏   可以循环用  递加计数
 </code></pre>
+
+<p><br></p>
 
 <pre><code class="language-java">/**
  * 倒计时锁方式实现
@@ -1248,6 +1418,8 @@ public class CountDownLockExample {
 
 </code></pre>
 
+<p><br></p>
+
 <pre><code class="language-java">public class CyclicBarrierExample {
     public static class Game implements Runnable{
         private CyclicBarrier barrier;
@@ -1281,11 +1453,15 @@ public class CountDownLockExample {
 
 </code></pre>
 
+<p><br></p>
+
 <p><strong>快速失败和安全失败的区别：</strong></p>
 
 <p>fail-fast:   java.util包下的集合类都是快速失败的，不能在多线程下发生并发修改（迭代过程中被修改）在用迭代器遍历一个集合对象时，如果遍历过程中对集合对象的内容进行了修改（增加、删除、修改），则会抛出ConcurrentModificationException</p>
 
 <p>fail-safe:   java.util.concurrent包下的容器都是安全失败，可以在多线程下并发使用，并发修改。在遍历时不是直接在集合内容上访问的，而是先复制原有集合内容，在拷贝的集合上进行遍历。</p>
+
+<p><br></p>
 
 <pre><code class="language-java">/**
  * 不要在foreach循环里面进行 remove/add 操作 因为Java.util 下的集合类都是fail-fast的 会报ConcurrentModificationException错误
@@ -1310,6 +1486,8 @@ public class Foreach {
 
 </code></pre>
 
+<p><br></p>
+
 <p>**两个线程循环交替打印 100 内的奇偶数思路： **</p>
 
 <p>提示：i++多线程下不是线程安全的</p>
@@ -1317,6 +1495,8 @@ public class Foreach {
 <p>思路： 线程加锁:     <code>synchronized</code></p>
 
 <p>​           线程不加锁： 原子类<code>AtomicInteger</code></p>
+
+<p><br></p>
 
 <pre><code>public class PrintAb implements Runnable {
     private static int count = 0;
@@ -1354,6 +1534,8 @@ public class Foreach {
 
 </code></pre>
 
+<p><br></p>
+
 <pre><code class="language-java">public class PrintAbPro {
         private static AtomicInteger count = new AtomicInteger(0);
         private volatile static boolean flag = true;
@@ -1387,6 +1569,8 @@ public class Foreach {
 
 </code></pre>
 
+<p><br></p>
+
 <h2 id="file-类">File 类</h2>
 
 <p><strong>常用方法:</strong></p>
@@ -1407,6 +1591,8 @@ public class Foreach {
 <li><code>public File[] listFiles()</code>：返回一个File数组，表示该File目录中的所有的子文件或目录。</li>
 </ul>
 
+<p><br></p>
+
 <h2 id="io">Io</h2>
 
 <p>根据数据的流向分为：<strong>输入流</strong>和<strong>输出流</strong>。</p>
@@ -1415,11 +1601,15 @@ public class Foreach {
 
 <p><strong>输出流</strong> ：把数据从 内存 中写出到 其他设备 上的流。</p>
 
+<p><br></p>
+
 <p>格局数据的类型分为：<strong>字节流</strong>和<strong>字符流</strong>。</p>
 
 <p><strong>字节流</strong> ：以字节为单位，读写数据的流。</p>
 
 <p><strong>字符流</strong> ：以字符为单位，读写数据的流。   用法类似</p>
+
+<p><br></p>
 
 <p><strong>java.io.FileOutputStream</strong> 类是文件输出流，用于将数据写出到文件。</p>
 
@@ -1451,6 +1641,8 @@ f.write(&quot;\r\n&quot;.getBytes());  // 追加换行符
 
 
 </code></pre>
+
+<p><br></p>
 
 <p><strong>java.io.FileInputStream</strong> 类是文件输入流，从文件中读取字节。</p>
 
@@ -1487,6 +1679,8 @@ while (( len= fis.read(b))!=‐1){
 
 </code></pre>
 
+<p><br></p>
+
 <p><strong>写出字符串</strong>:</p>
 
 <pre><code class="language-java">// 使用文件名称创建流对象 
@@ -1502,6 +1696,8 @@ fw.write(msg); //天天向上
 
 </code></pre>
 
+<p><br></p>
+
 <p><strong>缓冲流</strong>：也叫高效流，是对4个基本的 FileXxx 流的增强，所以也是4个流，按照数据类型分类：</p>
 
 <p><strong>字节缓冲流</strong>： BufferedInputStream ， BufferedOutputStream</p>
@@ -1509,6 +1705,8 @@ fw.write(msg); //天天向上
 <p><strong>字符缓冲流</strong>： BufferedReader ， BufferedWriter</p>
 
 <p>缓冲流的基本原理，是在创建流对象时，会创建一个内置的默认大小的缓冲区数组，通过缓冲区读写，减少系统IO 次数，从而提高读写的效率。</p>
+
+<p><br></p>
 
 <pre><code class="language-java">/**
  * 缓冲流 ：创建流对象时，会创建一个内置的默认大小的缓冲区数组，通过缓冲区读写，减少系统IO 次数，从而提高读写的效率
@@ -1572,6 +1770,8 @@ public class TestIoPro {
 
 </code></pre>
 
+<p><br></p>
+
 <p><strong>NIO:</strong></p>
 
 <p><strong>NIO的特性/NIO与IO区别:</strong></p>
@@ -1581,6 +1781,8 @@ public class TestIoPro {
 <li>2) IO流是阻塞的，NIO流是不阻塞的;</li>
 <li>3) NIO有选择器，而IO没有。</li>
 </ul>
+
+<p><br></p>
 
 <p><strong>NIO核心组件：</strong></p>
 

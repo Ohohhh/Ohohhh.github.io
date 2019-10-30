@@ -264,7 +264,7 @@
 
   <p><strong>代理模式：</strong></p>
 
-<p>​   代理是当两个类需要通信时，引入第三方代理类，将两个类的关系解耦，让我们只了解代理类即可，而且代理的出现还可以让我们完成与另一个类之间的关系的统一管理，但是切记，代理类和委托类要实现相同的接口，因为代理真正调用的还是委托类的方法。通俗的讲 现在的明星经纪人就是类似代理类的作用</p>
+<p>​   代理是当两个类需要通信时，引入第三方代理类，将两个类的关系解耦，让我们只了解代理类即可，而且代理的出现还可以让我们完成与另一个类之间的关系的统一管理，但是切记，代理类和委托类要实现相同的接口，因为代理真正调用的还是委托类的方法。通俗的讲 现在的明星经纪人就是类似代理类的作用 <br></p>
 
 <pre><code class="language-java">/**
  * 被代理对象  必须实现某个接口
@@ -278,6 +278,8 @@ public class Lennon implements Study {
 }
 </code></pre>
 
+<p><br></p>
+
 <pre><code class="language-java">/**
  * @author lennon
  */
@@ -288,6 +290,8 @@ public interface Study {
     void study();
 }
 </code></pre>
+
+<p><br></p>
 
 <pre><code class="language-java">/**
  *  静态代理：
@@ -327,6 +331,8 @@ public class StaticProxy implements Study {
 
 </code></pre>
 
+<p><br></p>
+
 <pre><code class="language-java">/**
  *  静态代理测试类
  * @author lennon
@@ -344,6 +350,8 @@ public class ProxyTest {
     }
 }
 </code></pre>
+
+<p><br></p>
 
 <pre><code class="language-java">/**
  * 动态代理类：动态代理对象不需要实现接口，但是要求目标对象必须实现接口，否则不能使用动态代理
@@ -375,12 +383,16 @@ public class DynamicProxy {
 }
 </code></pre>
 
+<p><br></p>
+
 <p><strong>静态代理与动态代理的区别主要在：</strong></p>
 
 <ul>
 <li>静态代理在编译时就已经实现，编译完成后代理类是一个实际的class文件</li>
 <li>动态代理是在运行时动态生成的，即编译完成后没有实际的class文件，而是在运行时动态生成类字节码，并加载到JVM中</li>
 </ul>
+
+<p><br></p>
 
 <p><strong>扩展：</strong></p>
 
