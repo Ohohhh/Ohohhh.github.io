@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Java on Ohohhh&#39;s blog</title>
-    <link>https://ohohhh.github.io/topics/java/</link>
-    <description>Recent content in Java on Ohohhh&#39;s blog</description>
+    <title>Java基础整理 on Ohohhh&#39;s blog</title>
+    <link>https://ohohhh.github.io/tags/java%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86/</link>
+    <description>Recent content in Java基础整理 on Ohohhh&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>&amp;copy; 2016. All rights reserved.</copyright>
     <lastBuildDate>Wed, 30 Oct 2019 12:23:08 +0800</lastBuildDate>
     
-	<atom:link href="https://ohohhh.github.io/topics/java/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ohohhh.github.io/tags/java%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>

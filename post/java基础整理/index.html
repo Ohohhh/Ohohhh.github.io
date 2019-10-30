@@ -1,0 +1,1680 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  <title>Java基础整理 &middot; Ohohhh&#39;s blog</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://ohohhh.github.io/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://ohohhh.github.io/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://ohohhh.github.io/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/androidstudio.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://ohohhh.github.io/img/favicon.ico" type="image/x-icon" />
+
+  
+    
+        <link rel="stylesheet" href="https://ohohhh.github.io/css/my.css">
+    
+  
+  
+    
+        <script src="https://ohohhh.github.io/js/my.js"></script>
+    
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+  <a class="pure-menu-heading brand" href="https://ohohhh.github.io/">Menu</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://ohohhh.github.io/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://ohohhh.github.io/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://ohohhh.github.io/topics/"><i class='fa fa-folder fa-fw'></i>Topics</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://ohohhh.github.io/tags/"><i class='fa fa-tags fa-fw'></i>Tags</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://ohohhh.github.io/contact/"><i class='fa fa-phone fa-fw'></i>Contact</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="http://weibo.com/5954877907" rel="me" target="_blank"><i class="fa fa-weibo fa-fw"></i>Weibo</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/Ohohhh" rel="me" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2016. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Java基础整理</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>30 Oct 2019, 12:23</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://ohohhh.github.io/topics/java">Java</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://ohohhh.github.io/tags/java%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86">Java基础整理</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  
+
+<h2 id="基础知识">基础知识</h2>
+
+<p><strong>配置环境变量：</strong></p>
+
+<ol>
+<li>点击系统变量的 新建 ，创建新的环境变量，变量名输入 JAVA_HOME ，变量值输入JDK9的安装目录</li>
+<li>选中 Path 环境变量，点击新建，键入%JAVA_HOME%\bin</li>
+</ol>
+
+<p><strong>IDEA快捷键：</strong></p>
+
+<table>
+<thead>
+<tr>
+<th><code>Alt+enter</code></th>
+<th>导入包，自动修正代码</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>Ctrl+Y</code></td>
+<td>删除光标所在行</td>
+</tr>
+
+<tr>
+<td><code>Ctrl+D</code></td>
+<td>复制光标所在行的内容，插入光标位置下面</td>
+</tr>
+
+<tr>
+<td><code>Ctrl+Alt+L</code></td>
+<td>按规范格式化代码</td>
+</tr>
+
+<tr>
+<td><code>Ctrl+/</code></td>
+<td>注释代码</td>
+</tr>
+
+<tr>
+<td><code>Ctrl+Shift+/</code></td>
+<td>选中代码注释，多行注释，再按取消注释</td>
+</tr>
+
+<tr>
+<td><code>Alt+Ins</code></td>
+<td>自动生成代码，toString，get，set等方法</td>
+</tr>
+
+<tr>
+<td><code>Alt+Shift+上下箭头</code></td>
+<td>移动当前代码行</td>
+</tr>
+
+<tr>
+<td><code>Ctrl+r</code></td>
+<td>批量修改名字</td>
+</tr>
+
+<tr>
+<td><code>Alt +shift +T</code></td>
+<td>批量选中代码</td>
+</tr>
+
+<tr>
+<td><code>Ctrl+鼠标左键</code></td>
+<td>查看源码</td>
+</tr>
+
+<tr>
+<td><code>ctrl+n</code></td>
+<td>查找类</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>JVM</strong>（Java Virtual Machine ）：Java虚拟机，，我们编写的Java代码，都运行在 JVM 之上。</p>
+
+<p><strong>JRE</strong> (Java Runtime Environment) ：是Java程序的运行时环境，包含 JVM 和运行时所需要的 核心类库 。</p>
+
+<p><strong>JDK</strong> (Java Development Kit)：是Java程序开发工具包，包含 JRE 和开发人员使用的工具。</p>
+
+<p><strong>JDK排查故障命令行工具：</strong></p>
+
+<ul>
+<li><strong>jps</strong> (JVM Process Status）: 类似 UNIX 的 <code>ps</code> 命令。用户查看所有 Java 进程的启动类、传入参数和 Java 虚拟机参数等信息；</li>
+<li><strong>jstat</strong>（ JVM Statistics Monitoring Tool）: 用于收集 HotSpot 虚拟机各方面的运行数据;</li>
+</ul>
+
+<p>如：<code>jstat -class vmid</code> ：显示 ClassLoader 的相关信息</p>
+
+<p>​       <code>jstat -gc vmid</code> ：显示与 GC 相关的堆信息</p>
+
+<p><code>jstat -gcutil vmid</code> ：显示垃圾收集信息</p>
+
+<ul>
+<li><strong>jinfo</strong> (Configuration Info for Java) : Configuration Info forJava,显示虚拟机配置信息;</li>
+<li><strong>jmap</strong> (Memory Map for Java) :生成堆转储快照;</li>
+<li><strong>jhat</strong> (JVM Heap Dump Browser ) : 用于分析 heapdump 文件，它会建立一个 HTTP/HTML 服务器，让用户可以在浏览器上查看分析结果;</li>
+<li><strong>jstack</strong> (Stack Trace for Java):生成虚拟机当前时刻的线程快照，线程快照就是当前虚拟机内每一条线程正在执行的方法堆栈的集合。使用 ：  jstack  线程id</li>
+</ul>
+
+<p><strong>Java中都是采用的值传递：</strong></p>
+
+<p>一个方法可以修改传递引用所对应的变量值，而不能修改传递值调用所对应的变量值。</p>
+
+<pre><code class="language-java">public static void main(String[] args) {
+        List&lt;String&gt; a = null;  // 空地址
+        test(a);
+        System.out.println(a);  // null
+    }
+
+    private static void test(List&lt;String&gt; a) {  // 这里的a是形参 只是接收a引用地址的一个拷贝
+          a = new ArrayList&lt;&gt;();  // a指向一个新地址 所以改变并不影响原地址引用的对象的值
+          a.add(&quot;abc&quot;);
+        System.out.println(a);
+    }
+</code></pre>
+
+<p><strong>标识符</strong>：在程序中我们自己定义内容 ，比如类、方法、变量的名字。</p>
+
+<ul>
+<li>不能是关键字</li>
+<li>不能以数字开头</li>
+<li>以字母、数字、$美元符号、_下划线组成</li>
+</ul>
+
+<p><strong>字节</strong>：计算机最小存储单元。8个bit（二进制位） 0000-0000表示为1个字节，写成1 byte或者1 B。</p>
+
+<p><strong>常量</strong>：整数常量、小数常量、布尔常量、字符常量、字符串常量、空常量。（字符常量用单引号引起来 ，且必须有内容不能为空）</p>
+
+<p><strong>变量</strong>定义格式：</p>
+
+<pre><code class="language-java">数据类型 变量名 = 数据值；
+</code></pre>
+
+<p><strong>Java数据类型</strong>：</p>
+
+<p>基本数据类型：整数、浮点数、字符、布尔
+引用数据类型：类、数组、接口</p>
+
+<p>Java中的字符串String属于引用数据类型。因为String是一个类，底层是由数组构成。</p>
+
+<p>数据转换：范围小的向范围大的类型转，<code>byte</code>,<code>short</code>,<code>char</code>运算时会自动向<code>int</code>转</p>
+
+<blockquote>
+<p>byte、short、char‐‐&gt;int‐‐&gt;long‐‐&gt;float‐‐&gt;double</p>
+</blockquote>
+
+<ul>
+<li><strong>装箱</strong>：将基本类型用它们对应的引用类型包装起来；</li>
+<li><strong>拆箱</strong>：将包装类型转换为基本数据类型；</li>
+</ul>
+
+<p>除了浮点型的两种包装类 其他包装类都有缓存池 ，short,long,Integer范围在 [-128 127]</p>
+
+<pre><code class="language-java">Integer i3 = 222;  // 自动装箱
+;Integer i4 = 222;
+System.out.println(i3 == i4);  // false 超出缓存池范围
+</code></pre>
+
+<p>+= 是一个运算符，只运算一次，并带有强制转换的特点， 也就是说 s += 1 就是 s = (short)(s + 1)</p>
+
+<pre><code class="language-java">short s = 1;
+s += 1; // s = (short)(s+1)
+s = s + 1; // (s+1)为int--&gt;s为short   发生数据转换错误
+</code></pre>
+
+<p>混合运算时，++i 先自加1 再赋值， i++ 先赋值再自加1，独立运算时无影响。</p>
+
+<p><strong>注意:</strong>  i++ 是线程不安全的 当多个线程同时对i 进行操作 因为线程私有 有自己的工作内存，当线程a从主存中读取共享变量i 到自己的内存然后进行操作 但是操作完还没有保存到主存， 这时候线程b拿到的 i 就是个脏数据。</p>
+
+<p><strong>如何解决：</strong></p>
+
+<ol>
+<li>对 i++ 操作加同步锁 保证每次只有一个线程执行。</li>
+<li>使用 java.util.concurrent.atomic.AtomicInteger ,它支持原子性操作</li>
+</ol>
+
+<p><strong>| 和 || 的区别：</strong></p>
+
+<p>两个都是逻辑运算符，|也是位运算符(转换为二进制运算)。</p>
+
+<p>| 表示两边都会运算，然后再判断结果；</p>
+
+<p>|| 表示先运算符号左边的东西，然后判断是否为true，是true就停下来直接输出不会再运行后面的东西，是false就继续运算右边的然后判断并输出。</p>
+
+<p><code>System.out.println(3|9);  // 11</code></p>
+
+<p><strong>三元运算符</strong>格式：</p>
+
+<p><code>数据类型 变量名 = 布尔类型表达式？ 结果1：结果2</code></p>
+
+<p>布尔类型表达式结果是true，三元运算符整体结果为结果1，赋值给变量。</p>
+
+<p>布尔类型表达式结果是false，三元运算符整体结果为结果2，赋值给变量。</p>
+
+<p><strong>break 使用场景：</strong>终止switch或者循环。switch中由于case存在穿透性，所以要写break跳出循环。
+continue 使用场景：结束本次循环，继续下一次的循环。</p>
+
+<p><strong>==与equals()的区别：</strong></p>
+
+<p><strong>==</strong> : 它的作用是判断两个对象的地址是不是相等。即，判断两个对象是不是同一个对象(基本数据类型==比较的是值，引用数据类型==比较的是内存地址)。</p>
+
+<p><strong>equals()</strong> : 它的作用也是判断两个对象是否相等。但它一般有两种使用情况：</p>
+
+<ul>
+<li>情况1：类没有覆盖 equals() 方法。则通过 equals() 比较该类的两个对象时，等价于通过“==”比较这两个对象。</li>
+<li>情况2：类覆盖了 equals() 方法。一般，我们都覆盖 equals() 方法来比较两个对象的内容是否相等；若它们的内容相等，则返回 true (即，认为这两个对象相等)。</li>
+</ul>
+
+<p><strong>方法重载(overload)</strong>：静态绑定，指在同一个类中，允许存在一个以上的同名方法，只要它们的参数列表(参数个数或参数类型)不同即可，与修饰符和返回值类型无关 。</p>
+
+<p><strong>方法重写（override）</strong>: 动态绑定，子类对父类的允许访问的方法的实现过程进行重新编写, 返回值和形参都不能改变。即<strong>声明不变，重新实现</strong>！。</p>
+
+<p>private，static修饰的方法和构造器不能够重写因为它们都是静态绑定（在编译过程中就已经知道这个方法到底是哪个类中的方法）的。构造器只能重载不能重写。</p>
+
+<p><strong>Java三大特性：</strong></p>
+
+<p><strong>封装：</strong>封装把一个对象的属性私有化，同时提供一些可以被外界访问的属性的方法，如果属性不想被外界访问，我们大可不必提供方法给外界访问。但是如果一个类没有提供给外界访问的方法，那么这个类也没有什么意义了。</p>
+
+<p><strong>继承：</strong>继承是使用已存在的类的定义作为基础建立新类的技术，新类的定义可以增加新的数据或新的功能，也可以用父类的功能，但不能选择性地继承父类。通过使用继承我们能够非常方便地复用以前的代码。继承可以拥有父类中所有方法和属性(包括私有的)，但是仅仅是拥有无法访问。</p>
+
+<p><strong>多态：</strong>所谓多态就是指程序中定义的引用变量所指向的具体类型和通过该引用变量发出的方法调用在编程时并不确定，而是在程序运行期间才确定，即一个引用变量到底会指向哪个类的实例对象，该引用变量发出的方法调用到底是哪个类中实现的方法，必须在由程序运行期间才能决定。</p>
+
+<p>在Java中有两种形式可以实现多态：继承（多个子类对同一方法的重写）和接口（实现接口并覆盖接口中同一方法）。</p>
+
+<pre><code class="language-java">public class Dog extends Animal {
+    @Override
+    void eat(){
+        System.out.println(&quot;吃骨头&quot;);
+    }
+    private void sleep(){
+        System.out.println(&quot;睡觉&quot;);
+    }
+
+    public static void main(String[] args) {
+        // 向上转型: 父类引用指向子类对象
+        Animal dog =  new Dog();
+        // dog调用的是子类对象方法 吃骨头
+        dog.eat();  
+        //dog.sleep();  // 这里dog虽然指向子类对象 但是向上转型会丢失父类没有的方法
+        // 向下转型   这里的newDog还是指向子类对象
+        Animal newDog = (Animal)dog;
+        // 如果需要调用sleep方法，要先创建Dog实例
+        Dog dog1 = new Dog();
+        dog1.sleep();
+    }
+}
+</code></pre>
+
+<pre><code class="language-java">T&lt;? super B&gt;： ？是 B 的父类 下界通配符 可add()B及B的子类 因为jvm支持向上转型 不可get() 因为不知道用那个父类来存放get到的对象只有用所有类的基类Object来存 不会报错
+T&lt;? extends B&gt;   ？是 B的子类  上界通配符  不可add() 因为子类类型还不确定 可以get() 因为取的都可以用B来存
+public static void main(String[] args) {
+        // 上界
+        ArrayList&lt;? extends Fruit&gt; apples = new ArrayList&lt;&gt;();
+        // apples.add(new Fruit()); 报错 上界不能add操作 不确定其子类
+        Fruit fruit1 = apples.get(0);  // 可以get操作 用Fruit来接收
+
+        // 下届
+        ArrayList&lt;? super Apple&gt; apples1 = new ArrayList&lt;&gt;();
+        apples1.add(new BigApple());  // 可以add 向上转型
+        apples1.add(new Apple());
+        Object object = apples1.get(0);  // get时只能用Object接收
+        // Apple apple = apples1.get(0);  报错 其父类不确定 所以用Apple不知道能否装得下来
+    }
+</code></pre>
+
+<p><strong>JVM内存划分：</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>区域</th>
+<th align="left">作用</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>虚拟机栈</td>
+<td align="left">虚拟机执行 Java 方法 （也就是字节码）服务。线程私有。</td>
+</tr>
+
+<tr>
+<td>本地方法栈</td>
+<td align="left">方法运行时使用的内存，比如main方法运行，进入方法栈中执行。线程私有</td>
+</tr>
+
+<tr>
+<td>程序计数器</td>
+<td align="left">字节码解释器通过改变程序计数器来依次读取指令，从而实现代码的流程控制，如：顺序执行、选择、循环、异常处理。多线程情况下记录当前线程执行的位置。线程私有。</td>
+</tr>
+
+<tr>
+<td>方法区</td>
+<td align="left">它用于存储已被虚拟机加载的类信息（即存储可以运行的class文件）、常量、静态变量 。线程共享</td>
+</tr>
+
+<tr>
+<td>堆内存</td>
+<td align="left">存储对象实例或者数组，new来创建的，都存储在堆内存。线程共享</td>
+</tr>
+
+<tr>
+<td>栈内存</td>
+<td align="left">栈内存只包含原始值变量和堆中对象变量的引用。线程私有</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="数组-类-对象-接口">数组，类，对象，接口</h2>
+
+<p><strong>数组</strong>格式：</p>
+
+<p><code>数组存储的数据类型[] 数组名字 = new 数组存储的数据类型[长度]</code></p>
+
+<p><code>数据类型[] 数组名 = new 数据类型[]{元素1,元素2,元素3...}</code></p>
+
+<p><code>数据类型[] 数组名 = {元素1,元素2,元素3...}</code></p>
+
+<p><strong>数组和集合的区别（Array和ArrayList的区别：）</strong>：</p>
+
+<ol>
+<li>数组声明了它容纳的元素的类型，而集合不声明。集合存储的都是对象。而且对象的类型可以不一致。</li>
+<li>数组是静态的，一个数组实例具有固定的大小，一旦创建了就无法改变容量了。而集合是可以动态扩展容量，可以根据需要动态改变大小，集合提供更多的成员方法，能满足更多的需求。</li>
+</ol>
+
+<p><strong>数组的工具类 ：Arrays类</strong></p>
+
+<p><code>Arrays.toString(arr)</code>  数组内容转为字符串</p>
+
+<p><code>Arrays.sort(arr)</code>  升序排序</p>
+
+<p><code>Arrays.asList()</code> 数组转集合 方法返回的并不是 <code>java.util.ArrayList</code> ，而是 <code>java.util.Arrays</code> 的一个内部类,这个内部类并没有实现集合的修改方法或者说并没有重写这些方法，所以返回集合的不能add，remove，clear 操作；</p>
+
+<p><strong>解决方式：</strong> <code>List list = new ArrayList&lt;&gt;(Arrays.asList(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;))</code></p>
+
+<p><strong>copeOf和 arraycopy 的区别：</strong></p>
+
+<p>copeOf 内部调用了arraycopy  返回一个内部创建的指定length的数组</p>
+
+<p>arraycopy 需要指定目标数组，且需要指定原数组和目标数组的开始索引</p>
+
+<pre><code class="language-java">int[] s1= { 2,1,3};
+int[] s2 = new int[5];
+int[] re = Arrays.copyOf(s1, 2);
+System.arraycopy(s1,0,s2,0,3);
+System.out.println(Arrays.toString(s2));
+</code></pre>
+
+<p><strong>面向对象与面向过程的区别</strong>：</p>
+
+<p>​   面向对象强调的是通过调用对象的行为来实现功能，而面向过程需要一步一步去实现。</p>
+
+<p><strong>类与对象的关系：</strong></p>
+
+<ul>
+<li>类是一组相关<strong>属性</strong>和<strong>行为</strong>的集合是对一类事物的描述，是抽象的。</li>
+<li>对象是一类事物的实例，是具体的。</li>
+<li>类是对象的模板，对象是类的实体。</li>
+</ul>
+
+<p><strong>class.forName和ClassLoader的区别：</strong></p>
+
+<p>class.forName动态加载类到jvm中，会加载.class文件和静态代码块。</p>
+
+<p>ClassLoader只加载.class文件到jvm</p>
+
+<p><strong>什么是双亲委派模型：</strong></p>
+
+<p>​   每一个类都有一个对应它的类加载器。系统中的 ClassLoder 在协同工作的时候会默认使用 <strong>双亲委派模型</strong> 。即在类加载的时候，系统会首先判断当前类是否被加载过。已经被加载的类会直接返回，否则才会尝试加载。加载的时候，首先会把该请求委派该父类加载器的 <code>loadClass()</code> 处理，因此所有的请求最终都应该传送到顶层的启动类加载器 <code>BootstrapClassLoader</code> 中。当父类加载器无法处理时，才由自己来处理。当父类加载器为null时，会使用启动类加载器 <code>BootstrapClassLoader</code> 作为父类加载器。如果不想使用双亲委托机制，我们可以自己定义一个类加载器，然后重写 <code>loadClass()</code> 即可。</p>
+
+<p><strong>好处：</strong></p>
+
+<p>双亲委派模型保证了Java程序的稳定运行，可以避免类的重复加载（JVM 区分不同类的方式不仅仅根据类名，相同的类文件被不同的类加载器加载产生的是两个不同的类）</p>
+
+<p><strong>创建对象的方式：</strong></p>
+
+<ol>
+<li>使用new关键字</li>
+<li>使用newInstance()方法（懒汉式，多线程中可能会出现多个实例）</li>
+<li>使用clone()方法</li>
+<li>反序列化，比如调用 ObjectInputStream 类的 readObject() 方法</li>
+</ol>
+
+<p><strong>new和getInstance的区别：</strong></p>
+
+<ol>
+<li>new是调用构造方法创建一个对象，getInstance() (饿汉式)是一个静态方法调用返回的也静态的。</li>
+<li>getInstance是单例模式的，new可以创建多个新的实例对象 。</li>
+<li>对于抽象类，不能new，所以只能通过getInstance得到其实例对象。</li>
+</ol>
+
+<p><strong>Java创建对象的过程：</strong></p>
+
+<ol>
+<li>类加载检查 ：类加载之前虚拟机会先检查new指令的参数引用所代表的类是否已经被加载、解析、初始化过。</li>
+<li>分配内存：类加载检查通过之后，虚拟机为新对象分配内存。（分配内存的两种方式：指针碰撞和空闲列表）。</li>
+<li>初始化零值：将分配到的内存空间初始化零值（不包括对象头），保证了对象实例可以不赋初值就可以使用，访问的是默认初始零值。</li>
+<li>设置对象头：对象头里包含了一些头信息，如该对象是那个类的实例，如何找到该类的元数据信息，该对象的哈希码等都放在对象头中。</li>
+<li>执行init方法：当为对象按照自己的意愿初始化时执行，如为对象起别名。</li>
+</ol>
+
+<p><strong>怎么判断一个对象已经死亡：</strong></p>
+
+<pre><code>1. **引用计数法**：给对象中添加一个引用计数器，每当有一个地方引用它，计数器就加 1；当引用失效，计数器就减 1；任何时候计数器为 0 的对象就是不可能再被使用的。但是**它很难解决对象之间相互循环引用的问题**
+</code></pre>
+
+<ol>
+<li><strong>可达性分析</strong>: 通过一系列的称为 <strong>“GC Roots”</strong> 的对象作为起点，从这些节点开始向下搜索，节点所走过的路径称为引用链，当一个对象到 GC Roots 没有任何引用链相连的话，则证明此对象是不可用的。</li>
+</ol>
+
+<p>类需要同时满足下面 3 个条件才能算是 <strong>“无用的类”</strong> ：</p>
+
+<ol>
+<li>该类所有的实例都已经被回收，也就是 Java 堆中不存在该类的任何实例。</li>
+<li>加载该类的 ClassLoader 已经被回收。</li>
+<li>该类对应的 java.lang.Class 对象没有在任何地方被引用，无法在任何地方通过反射访问该类的方法。</li>
+</ol>
+
+<p><strong>成员变量与局部变量的区别</strong>：</p>
+
+<ol>
+<li><p>在类中的位置不同 。成员变量：类中，方法外， 局部变量：方法中或者方法声明上(形式参数）</p></li>
+
+<li><p>作用范围不一样。 成员变量：类中 局部变量：方法中</p></li>
+
+<li><p>初始化值的不同。  成员变量：有默认值 局部变量：没有默认值。必须先定义，赋值，最后使用</p></li>
+
+<li><p>生命周期不同 。</p></li>
+</ol>
+
+<p>成员变量：随着对象的创建而存在，随着对象的消失而消失</p>
+
+<p>局部变量：随着方法的调用而存在，随着方法的调用完毕而消失</p>
+
+<p>当成员变量用<code>private</code>关键字修饰时，本类中可提供set/get方法来访问私有变量，其中<code>this.成员变量</code> 为了解决形参和成员变量重名导致的成员变量被隐藏问题，从而无法赋值。</p>
+
+<p><strong>static和abstract：</strong></p>
+
+<p><strong>static</strong>:用来修饰的成员变量和成员方法，被修饰的成员是<strong>属于类</strong>的，而不是单单是属 于某个对象的。也就是说，既然属于类，就可以不靠创建对象来调用了。</p>
+
+<p>static 修饰的内容： 是随着类的加载而加载的，且只加载一次存储于一块固定的内存区域（静态区），所以，可以直接被类名调用。 它优先于对象存在，所以，可以被所有对象共享。</p>
+
+<p>静态方法中，不能使用this关键字。static修饰的成员变量和成员方法习惯上称为静态变量和静态方法，可以直接通过类名来访问</p>
+
+<p>在静态方法里只能直接调用同类中其他的静态成员（包括变量和方法），而不能直接访问类中的非静态成员。这是因为，对于非静态的方法和变量，需要先创建类的实例对象后才可使用，而静态方法在使用前不用创建任何对象。</p>
+
+<p>静态代码块：定义在成员位置，使用static修饰的代码块{ }。</p>
+
+<p>位置：类中方法外。 随着类的加载而执行且执行一次，优先于main方法和构造方法的执行。</p>
+
+<p><strong>abstract</strong>:使用 abstract关键字修饰方法，该方法就成了抽象方法，抽象方法只包含一个方法名，而没有方法体,所以抽象类中不需要创建对象。
+抽象方法 ： 没有方法体的方法。抽象类：包含抽象方法的类。
+继承抽象类的子类必须重写父类所有的抽象方法。</p>
+
+<p><strong>接口和抽象类的区别：</strong></p>
+
+<ol>
+<li>定义接口的关键字是interface ，抽象类的关键字是abstract</li>
+<li>一个类可以实现多个接口，但只能继承一个抽象类</li>
+<li>接口和抽象类中都可以定义变量，但是接口中定义的必须是公共的、静态的、final的，抽象类中的变量跟普通类中的没有区别</li>
+<li>抽象类和接口都不能直接实例化，如果要实例化，抽象类变量必须指向实现所有抽象方法的子类对象，接口变量必须指向实现所有接口方法的类对象</li>
+<li>抽象类里的抽象方法必须全部被子类所实现，如果子类不能全部实现父类抽象方法，那么该子类还只能是抽象类</li>
+<li>从设计层面来说，抽象是对类的抽象，是一种模板设计，接口是行为的抽象，是一种行为的规范</li>
+</ol>
+
+<p>在 JDK1.8后，允许在接口中包含带有具体实现的方法，使用 default 修饰，这类方法就是默认方法。</p>
+
+<p>在 JDK1.8后，接口也可以包含静态方法，static修饰。</p>
+
+<p><strong>Scanner类的使用</strong>：</p>
+
+<pre><code class="language-java">// 获取键盘输入  方法一：
+Scanner sc = new Scanner(System.in);
+System.out.println(&quot;请输入一个数字：&quot;)；
+int a = sc.nextInt();
+// 获取键盘输入  方法二：
+BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println(&quot;请输入一个字符串：&quot;);
+        String s1 = input.readLine();
+        System.out.println(s1);
+
+
+</code></pre>
+
+<p><strong>Random类的使用：</strong></p>
+
+<pre><code class="language-java">Random r = new Random();
+// 随机生成[0,10)的整数
+int a = r.nextInt(10); 
+// 随机生成[0,10]的整数
+int b = r.nextInt(11)+0  // int randNumber =rand.nextInt(MAX - MIN + 1) + MIN
+    
+// 多线程场景下通常使用ThreadLocalRandom类来代替Random，它的效率高的多，且随机数分布均匀。
+// 随机生成[0,10)的整数
+int c = ThreadLocalRandom.current().nextInt(0, 10);
+
+
+</code></pre>
+
+<p><strong>工具类Math类的使用：</strong></p>
+
+<pre><code class="language-java">Math.abs(-5)  // 5 返回绝对值
+Math.ceil(5.5)  // 6  向上取整
+Math.floor(5.5)  // 5  向下取整
+Math.round(5.5) // 6 四舍五入，正数时0.5向上取整
+Math.round(-5.5)  // -5 负数时，-0.5直接舍弃
+
+
+</code></pre>
+
+<h2 id="string">String</h2>
+
+<p>java.lang.String 类代表字符串。</p>
+
+<p><code>public final class String</code></p>
+
+<p><strong>特点：</strong></p>
+
+<ol>
+<li>字符串的值在创建后不能被更改。</li>
+</ol>
+
+<pre><code class="language-java">String str = &quot;abc&quot;;
+str += &quot;d&quot;; 
+System.out.println(str);  // abcd
+//  内存中有abc  和  abcd 两个对象  上面只是改变了str的指向并没有改变abc对象的值
+
+
+
+</code></pre>
+
+<ol>
+<li>String值不能修改 final修饰的，可以共享。final 修饰 StringBuffer 后还可以 append。</li>
+</ol>
+
+<pre><code class="language-java">String str1 = &quot;a&quot;;  // 常量池中
+String str2 = &quot;a&quot;;  // 发现常量池中有就直接引用了
+// 内存中只有一个&quot;a&quot;对象被创建，但是被str1和str2所共享
+
+
+
+</code></pre>
+
+<ol>
+<li><p>String底层是数组，所以其为引用类型</p>
+
+<pre><code>String str = &quot;abc&quot;; 
+相当于：
+char data[] = {'a', 'b', 'c'}; 
+String str = new String(data); 
+// String底层是靠字符数组实现的。
+
+
+</code></pre></li>
+</ol>
+
+<p><strong>测试：</strong></p>
+
+<pre><code class="language-java"> public static void main(String[] args) {
+        String s1 = &quot;hello&quot;;  // 在常量池中
+        // 这里先看常量池是否存在hello对象 如果有就只在堆内存创建一个hello对象
+        // 如果没有就先在常量池中创建，然后在堆中创建
+        String s2 = new String(&quot;hello&quot;);  // 在堆内存中
+        System.out.println(s1 == s2);  // false
+        System.out.println(s1.equals(s2));  // true String重写了equals方法 所以这里比较值是否相等
+        // 除了浮点型的两种包装类 其他包装类都有缓存池 ，范围在 [-128 127]
+        Integer i1 = 22;
+        Integer i2 = 22;
+        System.out.println(i1 == i2);  // true
+        Integer i3 = 222;
+        Integer i4 = 222;
+        System.out.println(i3 == i4);  // false 超出缓存池范围
+        Integer i5 = Integer.valueOf(33);  // 相当于 Integer i5 = 33;
+        System.out.println(i5 == 33);  // true
+    }
+
+
+</code></pre>
+
+<p><strong>常用方法：</strong></p>
+
+<ul>
+<li><code>public int length ()</code>：返回此字符串的长度。</li>
+<li><code>public String concat (String str)</code>：将指定的字符串连接到该字符串的末尾。如果拼接的字符串是 null，concat 时候就会抛出 NullPointerException。</li>
+<li><code>public char charAt (int index)</code>：返回指定索引处的 char值。</li>
+<li><code>public int indexOf (String str)</code> ：返回指定子字符串第一次出现在该字符串内的索引。</li>
+<li><code>public String substring (int beginIndex)</code>：返回一个子字符串，从beginIndex开始截取字符串到字符 串结尾。</li>
+<li><code>public String substring (int beginIndex, int endIndex)</code> ：返回一个子字符串，从beginIndex到 endIndex截取字符串。含beginIndex，不含endIndex。</li>
+<li><code>public char[] toCharArray ()</code>：将此字符串转换为新的字符数组。</li>
+<li><code>public byte[] getBytes ()</code> ：使用平台的默认字符集将该 String编码转换为新的字节数组。</li>
+<li><code>public String replace (CharSequence target, CharSequence replacement)</code>：将与target匹配的字符串使 用replacement字符串替换。</li>
+<li><code>public String[] split(String regex,int limit)</code>：将此字符串按照给定的regex（正则表达式规则）拆分为字符串数组，limit 为分割的次数。</li>
+</ul>
+
+<p><strong>StringBuffer 和 StringBuilder的区别：</strong></p>
+
+<p>​   StringBuffer支持并发操作，线性安全的,加了同步锁，适 合多线程中使用。</p>
+
+<p>​   StringBuilder不支持并发操作，线性不安全的，不适合多线程中使用。StringBuilder类不是线程安全的，但其在单线程中的性能比StringBuffer高。</p>
+
+<p>阿里巴巴规范中表示：<strong>不建议在 for 循环中使用”+”号操作符进行字符串拼接</strong>，而是使用StringBuilder的append方法，因为前者会创建大量StringBuilder对象（+操作符源码中实际是调用的StringBuilder）导致性能低下,而后者始终只有一个StringBuilder对象。</p>
+
+<p>扩展：也可以使用<strong>StringUtils.join</strong>进行字符串拼接，该方法不用担心 NullPointerException。</p>
+
+<pre><code>StringUtils.join(null)            = null
+StringUtils.join([])              = &quot;&quot;
+StringUtils.join([null])          = &quot;&quot;
+StringUtils.join([&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]) = &quot;abc&quot;
+StringUtils.join([null, &quot;&quot;, &quot;a&quot;]) = &quot;a&quot;
+// JDK 1.8 提供了一种新的字符串拼接姿势：String 类增加了一个静态方法 join
+String message = String.join(&quot;-&quot;, &quot;我&quot;, &quot;太特么&quot;, &quot;帅了&quot;);
+// 输出    我-太特么-帅了
+
+
+</code></pre>
+
+<p>​</p>
+
+<h2 id="集合">集合</h2>
+
+<p>顶层：Collection 不带索引 所以遍历需要用迭代器Iterator</p>
+
+<p>list和set 是Collection的接口 所以不能new</p>
+
+<ul>
+<li>list：可重复 有索引 有顺序的</li>
+<li>set：无重复  无索引不能使用普通for循环遍历 用增强for</li>
+</ul>
+
+<p>List的子类：<code>ArrayList</code> , <code>LinkedList</code></p>
+
+<p><strong>ArrayList 和LinkedList 的区别：</strong></p>
+
+<ol>
+<li>底层数据结构：ArrayList底层为数组，LinkedList底层为双向链表。</li>
+<li>快速随机访问：ArrayList访问快，LinkedList增删快。</li>
+<li>内存空间占用：ArrayList底层为动态数组，会预留一定的容量空间，LinkedList则是在每个元素还要储存前驱和后继导致的空间浪费。</li>
+<li>插入删除的影响：ArrayList插入删除复杂度大概为O(n),受位置影响。LinkedList则近等于O(1),不受位置影响。</li>
+<li>都是不同步，他们都是线程不安全的。需要线程安全可使用Vector类取代ArryList，它的所有方法都是同步的，只是在一个线程访问时会浪费大量时间在同步操作上。线程安全优先考虑性能最佳的<strong>CopyOnWriteArrayList</strong>（读操作不改变源码就没加锁，写操作是操作的副本 改动完再把原内存指针指向改动后的内存）。</li>
+</ol>
+
+<p>java.util.ArrayList 是大小<strong>可变的数组</strong>的实现，称为集合类。</p>
+
+<p>构造格式：</p>
+
+<p><code>ArrayList&lt;E&gt; list = new ArrayList&lt;&gt;();</code></p>
+
+<p>E为泛型，可替换成你所用的<strong>引用类型</strong></p>
+
+<p>常用方法：</p>
+
+<ul>
+<li><code>public boolean add(E e)</code>：将指定的元素添加到此集合的尾部。</li>
+<li><code>public E remove(int index)</code> ：移除此集合中指定位置上的元素。返回被删除的元素。</li>
+<li><code>public E get(int index)</code>：返回此集合中指定位置上的元素。返回获取的元素。</li>
+<li><code>public int size()</code>：返回此集合中的元素数。遍历集合时，可以控制索引范围，防止越界。</li>
+</ul>
+
+<p>ArrayList对象不能存储基本类型，只能存储引用类型的数据。类似 <strong><int></strong> 不能写，但是存储基本数据类型对应的 包装类型是可以的。</p>
+
+<p>只有int-&gt; Integer 和 char&gt;Character 需要特殊记忆，其他基本类型只是首字母大写即可。</p>
+
+<p>set的子类：<code>Hashset</code> , <code>LinkedHashSet</code></p>
+
+<p>给HashSet中存放自定义类型元素时，需要<strong>重写对象中的hashCode和equals方法</strong>，建立自己的比较方式，才能保 证HashSet集合中的对象唯一。</p>
+
+<p>可参考：<a href="https://www.cnblogs.com/skywang12345/p/3324958.html">Java hashCode() 和 equals()的若干问题解答</a></p>
+
+<p>HashSet保证元素唯一，可是元素存放进去是没有顺序的
+为了保证有序使用 LinkedHashSet ，它是链表和哈希表组合的一个数据存储结构</p>
+
+<p><strong>可变参数</strong></p>
+
+<p>如果我们定义一个方法需要接受多个参数，并且多个参数类型一致，我们可以对其简化成如下格 式：</p>
+
+<p><code>修饰符 返回值类型 方法名(参数类型... 形参名){ }</code></p>
+
+<p>这个书写完全等价与</p>
+
+<p><code>修饰符 返回值类型 方法名(参数类型[] 形参名){ }</code></p>
+
+<p>但是可以省去创建数组的步骤直接传值</p>
+
+<p><strong>泛型</strong>：可以在类或方法中预支地使用未知的类型。
+一般在创建对象时，将未知的类型确定具体的类型。当没有指定泛型时，默认类型为Object类型。
+泛型的通配符:不知道使用什么类型来接收的时候,此时可以使用?,?表示未知通配符。</p>
+
+<p><strong>Comparable和Comparator的区别：</strong></p>
+
+<p>Comparable: 自然排序，只有一个compareTo方法 内部较器 耦合度较高
+Comparator:  自定义排序  有compare 和 equals 两个方法  外部比较器 易维护* 如果实现类没有实现Comparable接口，又想对两个类进行比较（或者实现类实现了Comparable接口，但是对compareTo方法内的比较算法不满意），那么可以实现Comparator接口</p>
+
+<p><strong>map:</strong></p>
+
+<p>Collection 中的集合称为单列集合， Map 中的集合称为双列集合。 需要注意的是， Map 中的集合不能包含重复的键，值可以重复；每个键只能对应一个值。</p>
+
+<p>Map 的子类：<code>HashMap</code>集合、<code>LinkedHashMap</code>、<code>HashTable</code>集合。</p>
+
+<p><strong>HashMap</strong>：内部实现为数组+链表+红黑树（jdk1.8增加的），链表的存在是为了解决哈希冲突，当链表长度大于8时转为红黑树。元素的存取顺序不能保证一致,，允许键一次为null，值多次为null。由于要保证键的唯一、不重复，需 要重写键的hashCode()方法、equals()方法。 非线程安全(保证线程安全使用ConcurrentHashMap)。</p>
+
+<p><a href="https://zhuanlan.zhihu.com/p/21673805">HashMap源码分析</a></p>
+
+<p><strong>HashTabel</strong>：和HashMap大同小异，主要差异在于HashTable不允许键或值为null不然会报空指针异常。加了同步代码块，线程安全，但效率低下，被舍弃。</p>
+
+<p><strong>LinkedHashMap</strong>：HashMap的子类，存储数据采用的哈希表结构+链表结构。通过链 表结构可以保证元素的存取顺序一致；通过哈希表结构可以保证的键的唯一、不重复，需要重写键的 hashCode()方法、equals()方法。</p>
+
+<p><strong>ConcurrentHashMap(分段锁)</strong>:与HashTable不同的是这里采用分段式加锁来解决线程安全问题，保证了并发操作下的线程安全。JDK1.8之后取消了Segment分段锁，采用CAS和synchronized来保证并发下线程安全，只锁定链表或红黑二叉树首节点效率更高。</p>
+
+<p>常用方法：</p>
+
+<p><code>public V put(K key, V value)</code>: 把指定的键与指定的值添加到Map集合中。</p>
+
+<p><code>public V remove(Object key)</code> : 把指定的键 所对应的键值对元素 在Map集合中删除，返回被删除元素的</p>
+
+<p>值。</p>
+
+<p><code>public V get(Object key)</code>: 根据指定的键，在Map集合中获取对应的值。</p>
+
+<p><code>public Set&lt;K&gt; keySet()</code> : 获取Map集合中所有的键，存储到Set集合中。</p>
+
+<p><code>public Set&lt;Map.Entry&lt;K,V&gt;&gt; entrySet()</code>: 获取到Map集合中所有的键值对对象的集合(Set集合)，通过键值对(Entry)对象，获取Entry对象中的键与值。 方法提示: getkey() getValue() 。</p>
+
+<p><strong>of（）方法：</strong></p>
+
+<p>of()方法只是Map，List，Set这三个接口的静态方法，其父类接口和子类实现并没有这类方法，比如 HashSet，ArrayList等； 2:返回的集合是不可变的 所以不能再add 等操作!</p>
+
+<h2 id="多线程">多线程</h2>
+
+<p>使用多线程时，<strong>不是多线程能提升程序的执行速度</strong>，使用多线程是为了<strong>更好地利用CPU资源</strong>！多线程是CPU通过给每个线程<strong>分配CPU时间片来实现</strong>的。</p>
+
+<p><strong>并发</strong>：指两个或多个事件在<strong>同一个时间段内</strong>发生。 同一实体上的多个事件。</p>
+
+<p><strong>并行</strong>：指两个或多个事件在<strong>同一时刻</strong>发生（同时发生）。不同实体上的多个事件。</p>
+
+<p><strong>进程是操作系统分配资源的单位。</strong></p>
+
+<p><strong>线程(Thread)是进程的一个实体，是CPU调度和分派的基本单位。</strong></p>
+
+<p>进程在执行过程中拥有独立的内存单元，而多个线程共享内存，从而极大地提高了程序的运行效率</p>
+
+<p><strong>各进程是相互独立的，那他们怎么通信的呢？</strong></p>
+
+<ul>
+<li>无名管道：只能用于父子或兄弟进程的通信。|  单向传输  前者输出作为后者输入</li>
+<li>命名管道：任意进程间的通信。mkfifo  test  命名一个test的管道 echo 写入东西  再cat 读 最后 写操作才结束，单向传输 效率低下 ，但是比较简单</li>
+<li>消息队列：消息的链接表，其中消息具有优先级，可实现随机查询，不用先进先出。双向，但是当发送消息的数据过大时，效率就比较低下。</li>
+<li>信号量：是一个计数器。用于实现进程间的互斥与同步，而不是用于存储进程间通信数据；线程安全的方式。</li>
+<li>共享内存：指两个或多个进程共享一个给定的存储区，最快的方式。但是并发下会有线程安全问题</li>
+<li>Socket: 上述的都是在同一主机上的多进程通信方式，而socket则可以用于不同主机之间 。</li>
+</ul>
+
+<p><strong>进程的调度算法</strong>是指：根据系统的资源分配策略所规定的资源分配算法。常用的调度算法有：先来先服务调度算法、时间片轮转调度法、短作业优先调度算法、最短剩余时间优先、高响应比优先调度算法、优先级调度算法等等。</p>
+
+<p><strong>实现Runnable接口比继承Thread类所具有的优势：</strong></p>
+
+<ol>
+<li>适合多个相同的程序代码的线程去共享同一个资源。</li>
+<li>可以避免java中的单继承的局限性。</li>
+<li>增加程序的健壮性，实现解耦操作，代码可以被多个线程共享，代码和线程独立。</li>
+<li>线程池只能放入实现Runable或Callable类线程，不能直接放入继承Thread的类。</li>
+</ol>
+
+<p><strong>sleep()和wait()的区别：</strong></p>
+
+<ol>
+<li>sleep()不会释放锁，wait()会释放锁</li>
+<li>sleep()属于Thread线程类，wait()属于Object类</li>
+<li>调用sleep()可以 自动苏醒，调用wait()则必须需要别的线程调用同一个对象上的notify()或者notifyAll()方法来唤醒</li>
+</ol>
+
+<p><strong>同步：</strong>方法调用需要等待返回结果</p>
+
+<p><strong>异步：</strong>方法调用不需要等待返回结果，后期通过通知或回调函数来通知调用</p>
+
+<p><strong>阻塞：</strong>结果返回之前把当前线程挂起等待</p>
+
+<p><strong>非阻塞：</strong>不用等待结果返回结果</p>
+
+<p>同步异步是相对于被调用者而言的</p>
+
+<p>阻塞非阻塞是相对于调用者而言的</p>
+
+<p><strong>同步问题</strong>：当我们使用多个线程访问同一资源的时候，且多个线程中对资源有写的操作，就容易出现线程安全问题。</p>
+
+<p><strong>同步代码块</strong>： synchronized 关键字可以用于方法中的某个区块中，表示只对这个区块的资源实行互斥访问。</p>
+
+<p>格式:</p>
+
+<pre><code>synchronized(同步锁){ 
+
+需要同步操作的代码 
+
+} 
+
+
+</code></pre>
+
+<p><strong>Lock 锁</strong>:</p>
+
+<p><code>public void lock()</code>:加同步锁。</p>
+
+<p><code>public void unlock()</code> :释放同步锁。</p>
+
+<p><strong>日期类优化建议：</strong></p>
+
+<p><code>SimpleDateFormat</code> 不是线程安全的</p>
+
+<p>解决方法： 1. 加锁synchronize(共享变量)  2. 使用ThreadLocal本地线程变量</p>
+
+<pre><code class="language-java">final ThreadLocal&lt;SimpleDateFormat&gt; threadLocal = ThreadLocal.withInitial(() -&gt; new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;));
+        LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(&quot;yyyy-MM-dd&quot;);
+        System.out.println(formatter.format(now));
+
+
+</code></pre>
+
+<p>JDK8之后，建议使用<code>instant</code>代替<code>Date</code>，<code>Localdatetime</code>代替<code>Calendar</code>，<code>Datetimeformatter</code>代替<code>Simpledateformatter</code>，
+官方给出的解释：simple beautiful strong immutable(不变) thread-safe</p>
+
+<p><strong>线程池</strong>：</p>
+
+<ul>
+<li><strong>newCachedThreadPool</strong>
+创建一个可缓存线程池，如果线程池长度超过处理需要，可灵活回收空闲线程，若无可回收，则新建线程。线程池为无限大，当执行第二个任务时第一个任务已经完成，会复用执行第一个任务的线程，而不用每次新建线程。
+创建方式： Executors.newCachedThreadPool()；</li>
+<li><strong>newFixedThreadPool</strong>
+创建一个定长线程池，可控制线程最大并发数，超出的线程会在队列中等待。定长线程池的大小最好根据系统资源进行设置，如Runtime.getRuntime().availableProcessors()。
+创建方式： Executors.newFixedThreadPool()；</li>
+<li><strong>newScheduledThreadPool</strong>
+创建一个定长线程池，支持定时及周期性任务执行。
+创建方式： Executors.newScheduledThreadPool ()；</li>
+<li><strong>newSingleThreadExecutor</strong>
+创建一个单线程化的线程池，它只会用唯一的工作线程来执行任务，保证所有任务按照指定顺序(FIFO, LIFO, 优先级)执行。
+创建方式： Executors.newSingleThreadExecutor ()；</li>
+</ul>
+
+<pre><code class="language-java">//1.创建线程池对象。
+ExecutorService pool =Executors.newFixedThreadPool(2);
+//2.创建Runnable接口子类对象。
+(task)ThreadPollDemo task = new ThreadPollDemo();
+// 从线程池中获取线程对象,然后调用MyRunnable中的run()方法
+pool.submit(task);
+pool.submit(task);
+pool.submit(task);
+pool.shutdown();// 关闭线程池
+
+
+
+</code></pre>
+
+<pre><code class="language-java">/*for (int i = 0; i &lt; 10; i++) {        
+	//  不要显示创建线程 避免多次new造成的资源浪费
+	new Thread(new Game(countDownLatch),i+&quot;赛道 :&quot;).start();       }*/    
+	
+// 使用ThreadPoolExecutor创建线程池    
+ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(10, 20, 10, TimeUnit.SECONDS, new ArrayBlockingQueue&lt;Runnable&gt;(3));    
+for (int i = 0; i &lt; 10; i++) {        
+	threadPoolExecutor.execute(new Game(countDownLatch));    
+}    
+hreadPoolExecutor.shutdown();
+}
+
+
+</code></pre>
+
+<p><strong>源码总结：</strong></p>
+
+<ol>
+<li>Executor是一个顶层接口，在它里面只声明了一个方法execute(Runnable)，返回值为void，参数为Runnable类型，从字面意思可以理解，就是用来执行传进去的任务的</li>
+<li>然后ExecutorService接口继承了Executor接口，并声明了一些方法：submit、invokeAll、invokeAny以及shutDown等</li>
+<li>抽象类AbstractExecutorService实现了ExecutorService接口，基本实现了ExecutorService中声明的所有方法</li>
+<li>然后ThreadPoolExecutor继承了类AbstractExecutorService。</li>
+</ol>
+
+<p><strong>ThreadPoolExecutor类中几个重要参数和方法：</strong></p>
+
+<p>ThreadPoolExecutor源码：</p>
+
+<pre><code class="language-java">public ThreadPoolExecutor(int corePoolSize,                          
+                          int maximumPoolSize,                        
+                          long keepAliveTime,                         
+                          TimeUnit unit,                         
+                          BlockingQueue&lt;Runnable&gt; workQueue)
+{this(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue,         Executors.defaultThreadFactory(), defaultHandler);}
+
+
+
+</code></pre>
+
+<p>参数解释：</p>
+
+<pre><code>`corePoolSize`: 核心池大小，在创建了线程池后，线程池中的线程数为0，当有任务来之后，就会创建一     个线程去执行任务，当线程池中的线程数目达到corePoolSize后，就会把到达的任务放到缓存队列当中。
+</code></pre>
+
+<p>​    <code>maximumPoolSie</code>: 线程池最大线程数，线程池最多创建这么多线程。</p>
+
+<p>​    <code>keepAliveTime</code>: 线程活跃时间，当线程池中的线程数大于corePoolSize时，如果一个线程空闲的时间达到     keepAliveTime，则会终止，直到线程池中的线程数不超过corePoolSize。</p>
+
+<p>​   <code>unit</code>: 参数keepAliveTime的时间单位。</p>
+
+<p>​   <code>workQueue</code>: 阻塞队列，用来存储等待执行的任务。</p>
+
+<p>​   <code>threadFactory</code>：线程工厂，主要用来创建线程；</p>
+
+<p>​   <code>handler</code>：表示当拒绝处理任务时的策略</p>
+
+<p>方法解释：</p>
+
+<ol>
+<li>execute()方法实际上是Executor中声明的方法，在ThreadPoolExecutor进行了具体的实现，这个方法是ThreadPoolExecutor的核心方法，通过这个方法可以向线程池提交一个任务，交由线程池去执行。</li>
+<li>submit()方法是在ExecutorService中声明的方法，在AbstractExecutorService就已经有了具体的实现，在ThreadPoolExecutor中并没有对其进行重写，这个方法也是用来向线程池提交任务的，但是它和execute()方法不同，它能够返回任务执行的结果，去看submit()方法的实现，会发现它实际上还是调用的execute()方法，只不过它利用了Future来获取任务执行结果。</li>
+<li>shutdown() (不会立即关闭)和shutdownNow() （立即关闭）是用来关闭线程池的。</li>
+<li>还有一大波get的方法， 可以获取与线程池相关属性的方法。</li>
+</ol>
+
+<p><strong>Lambda</strong>:</p>
+
+<p>格式：</p>
+
+<p><code>(参数类型 参数名称) ‐&gt; { 代码语句 }</code></p>
+
+<ol>
+<li>使用Lambda必须具有接口，且要求<strong>接口中有且仅有一个抽象方法</strong>。</li>
+<li>方法的参数或局部变量类型必须为Lambda对应的接口类型，才能使用Lambda作为该接口的实例。<br /></li>
+</ol>
+
+<p>**面试题： **</p>
+
+<p><strong>各线程循环等待某一任务执行完成再一同执行  （100米赛跑）</strong></p>
+
+<p>思路： CountDownLatch   倒计时锁存器  只能用一次  递减计数</p>
+
+<pre><code>        CyclicBarrier  循环栅栏   可以循环用  递加计数
+</code></pre>
+
+<pre><code class="language-java">/**
+ * 倒计时锁方式实现
+ * @author lennon
+ */
+public class CountDownLockExample {
+    public static class Game implements Runnable{
+        private CountDownLatch countDownLatch;
+        Game(CountDownLatch countDownLatch){
+            this.countDownLatch = countDownLatch;
+        }
+        @Override
+        public void run() {
+            try {
+                System.out.println(Thread.currentThread().getName()+&quot;准备就绪&quot;);
+                // 每执行一次计数器就 -1 直到为0
+                countDownLatch.countDown();
+                // await()表示全部到齐 可以开始执行一起要干的任务
+                countDownLatch.await();
+                // 全部到齐后执行
+                System.out.println(Thread.currentThread().getName()+&quot;开始跑了&quot;);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        // 创建倒计时器 并设置需要等待的线程数
+        CountDownLatch countDownLatch = new CountDownLatch(10);
+        /*for (int i = 0; i &lt; 10; i++) {
+            new Thread(new Game(countDownLatch),i+&quot;赛道 :&quot;).start();   //  不要显示创建线程
+        }*/
+        // 使用ThreadPoolExecutor构造方法创建线程池
+        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(10, 20, 10, TimeUnit.SECONDS, new ArrayBlockingQueue&lt;Runnable&gt;(3));
+        for (int i = 0; i &lt; 10; i++) {
+            threadPoolExecutor.execute(new Game(countDownLatch));
+        }
+        threadPoolExecutor.shutdown();
+    }
+}
+
+
+</code></pre>
+
+<pre><code class="language-java">public class CyclicBarrierExample {
+    public static class Game implements Runnable{
+        private CyclicBarrier barrier;
+        Game(CyclicBarrier barrier){
+            this.barrier = barrier;
+        }
+        @Override
+        public void run() {
+            try {
+                System.out.println(Thread.currentThread().getName()+&quot;准备就绪&quot;);
+                // await() 每执行一次 计数器就+1 一直到它=设定的值 表示全部到齐
+                barrier.await();
+                // 全部到齐后执行
+                System.out.println(Thread.currentThread().getName()+&quot;开始跑了&quot;);
+            } catch (InterruptedException | BrokenBarrierException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        // 创建循环栅栏对象 设置需要同步的线程数量
+        // lambda代码块表示 await()执行完成后执行的代码
+        CyclicBarrier barrier = new CyclicBarrier(10, () -&gt; System.out.println(&quot;预备....跑&quot;));
+        for (int i = 0; i &lt; 10; i++) {
+            new Thread(new Game(barrier),i+&quot;赛道 :&quot;).start();
+        }
+    }
+}
+
+
+</code></pre>
+
+<p><strong>快速失败和安全失败的区别：</strong></p>
+
+<p>fail-fast:   java.util包下的集合类都是快速失败的，不能在多线程下发生并发修改（迭代过程中被修改）在用迭代器遍历一个集合对象时，如果遍历过程中对集合对象的内容进行了修改（增加、删除、修改），则会抛出ConcurrentModificationException</p>
+
+<p>fail-safe:   java.util.concurrent包下的容器都是安全失败，可以在多线程下并发使用，并发修改。在遍历时不是直接在集合内容上访问的，而是先复制原有集合内容，在拷贝的集合上进行遍历。</p>
+
+<pre><code class="language-java">/**
+ * 不要在foreach循环里面进行 remove/add 操作 因为Java.util 下的集合类都是fail-fast的 会报ConcurrentModificationException错误
+ * 可以在Iterator 使用它的remove方法 进行remove 多线程下需要对Iterator 加锁
+ * @author lennon
+ */
+public class Foreach {
+    public static void main(String[] args) {
+        ArrayList&lt;String &gt; list = new ArrayList&lt;&gt;();
+        list.add(&quot;1&quot;);
+        list.add(&quot;2&quot;);
+        list.removeIf(&quot;2&quot;::equals);
+        //       错误的
+        /*for (String s : list) {
+            if (&quot;2&quot;.equals(s)) {
+                list.remove(s);
+            }
+        }*/
+    }
+}
+
+
+</code></pre>
+
+<p>**两个线程循环交替打印 100 内的奇偶数思路： **</p>
+
+<p>提示：i++多线程下不是线程安全的</p>
+
+<p>思路： 线程加锁:     <code>synchronized</code></p>
+
+<p>​           线程不加锁： 原子类<code>AtomicInteger</code></p>
+
+<pre><code>public class PrintAb implements Runnable {
+    private static int count = 0;
+    // 锁对象
+    private static final Object lock = new Object();
+
+    @Override
+    public void run() {
+        while (count &lt;= 100) {
+            synchronized (lock) {
+                System.out.println(Thread.currentThread().getName() + &quot;:&quot; + count++);
+                // 唤醒其他线程
+                lock.notifyAll();
+                try {
+                    // 如果当前任务还没完成就让出锁等待
+                    if (count &lt;= 100) {
+                        lock.wait();
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    public static void main(String[] args) throws InterruptedException {
+        new Thread(new PrintAb(), &quot;偶数&quot;).start();
+        // 让偶数线程先拿到锁
+        Thread.sleep(1);
+        new Thread(new PrintAb(), &quot;奇数&quot;).start();
+    }
+
+}
+
+
+</code></pre>
+
+<pre><code class="language-java">public class PrintAbPro {
+        private static AtomicInteger count = new AtomicInteger(0);
+        private volatile static boolean flag = true;
+
+    public static void main(String[] args) {
+        // 启动线程池
+        ExecutorService executorService = Executors.newCachedThreadPool();
+        // 处理偶数
+        executorService.execute(() -&gt;{
+            while (count.get() &lt;= 100){
+                if (flag){
+                    System.out.println(&quot;偶数:&quot;+count.getAndIncrement());
+                    flag = false;
+                }
+            }
+        });
+        // 处理奇数
+        executorService.execute(() -&gt;{
+            while (count.get() &lt;= 100){
+                if (!flag){
+                    System.out.println(&quot;奇数:&quot;+count.getAndIncrement());
+                    flag = true;
+                }
+            }
+        });
+        // 关闭线程池
+        executorService.shutdown();
+    }
+}
+
+
+</code></pre>
+
+<h2 id="file-类">File 类</h2>
+
+<p><strong>常用方法:</strong></p>
+
+<ul>
+<li><code>public String getAbsolutePath()</code>：返回此File的绝对路径名字</li>
+<li><code>public String getPath()</code>：将此File转换为路径名字符串。</li>
+<li><code>public String getName()</code>：返回由此File表示的文件或目录的名称。</li>
+<li><code>public long length()</code>：返回由此File表示的文件的长度。</li>
+<li><code>public boolean exists()</code>：此File表示的文件或目录是否实际存在。</li>
+<li><code>public boolean isDirectory()</code>：此File表示的是否为目录。</li>
+<li><code>public boolean isFile()</code>：此File表示的是否为文件。</li>
+<li><code>public boolean createNewFile()</code>：当且仅当具有该名称的文件尚不存在时，创建一个新的空文件。</li>
+<li><code>public boolean delete()</code>：删除由此File表示的文件或目录。 删除目录时目录要为空才能删除</li>
+<li><code>public boolean mkdir()</code>：创建由此File表示的目录。</li>
+<li><code>public boolean mkdirs()</code> ：创建由此File表示的目录，包括任何必需但不存在的父目录。</li>
+<li><code>public String[] list()</code>：返回一个String数组，表示该File目录中的所有子文件或目录。</li>
+<li><code>public File[] listFiles()</code>：返回一个File数组，表示该File目录中的所有的子文件或目录。</li>
+</ul>
+
+<h2 id="io">Io</h2>
+
+<p>根据数据的流向分为：<strong>输入流</strong>和<strong>输出流</strong>。</p>
+
+<p><strong>输入流</strong> ：把数据从 其他设备 上读取到 内存 中的流。</p>
+
+<p><strong>输出流</strong> ：把数据从 内存 中写出到 其他设备 上的流。</p>
+
+<p>格局数据的类型分为：<strong>字节流</strong>和<strong>字符流</strong>。</p>
+
+<p><strong>字节流</strong> ：以字节为单位，读写数据的流。</p>
+
+<p><strong>字符流</strong> ：以字符为单位，读写数据的流。   用法类似</p>
+
+<p><strong>java.io.FileOutputStream</strong> 类是文件输出流，用于将数据写出到文件。</p>
+
+<pre><code class="language-java">// 使用文件名称创建流对象 
+FileOutputStream f = new FileOutputStream(&quot;f.txt&quot;);
+
+
+</code></pre>
+
+<ol>
+<li><strong>写出数据</strong>：： write(int b) 方法，每次可以写出一个字节数据</li>
+<li><strong>写出字节数组</strong>： write(byte[] b) ，每次可以写出数组中的数据</li>
+</ol>
+
+<pre><code class="language-java">FileOutputStream fos = new FileOutputStream(&quot;f.txt&quot;);
+byte[]  b =&quot;好好学习&quot;.getBytes();
+fos.write(b);
+fos.close();
+
+
+</code></pre>
+
+<ol>
+<li><strong>追加数据</strong>:public FileOutputStream(File file/String name, boolean append)  创建文件输出流以写入由指定的 File对象或文件名字表示的 文件。 参数中都需要传入一个boolean类型的值， true 表示追加数据， false 表示清空原有数据。</li>
+</ol>
+
+<pre><code class="language-java">FileOutputStream f = new FileOutputStream(&quot;f.txt&quot;,true);
+f.write(&quot;\r\n&quot;.getBytes());  // 追加换行符
+
+
+</code></pre>
+
+<p><strong>java.io.FileInputStream</strong> 类是文件输入流，从文件中读取字节。</p>
+
+<pre><code class="language-java">// 使用文件名称创建流对象
+FileInputStream fis = new FileInputStream(&quot;s.txt&quot;);
+
+
+</code></pre>
+
+<ol>
+<li><strong>读取字节</strong>： read 方法，每次可以读取一个字节的数据，提升为int类型，读取到文件末尾，返回 -1</li>
+</ol>
+
+<pre><code class="language-java">int read = fis.read(); 
+System.out.println((char) read);
+// 循环读取
+int b;
+while ((b = fis.read())!=‐1) { System.out.println((char)b); }
+
+
+</code></pre>
+
+<ol>
+<li><strong>使用字节数组读取</strong>： read(byte[] b) ，每次读取b的长度个字节到数组中，返回读取到的有效字节个数，读 取到末尾时，返回 -1 ，</li>
+</ol>
+
+<pre><code class="language-java">int len ； 
+// 定义字节数组，作为装字节数据的容器 
+byte[] b = new byte[2]; 
+// 循环读取
+while (( len= fis.read(b))!=‐1){ 
+// 每次读取后,把数组的有效字节部分，变成字符串打印 System.out.println(new String(b，0，len));// len 每次读取的有效字节个数 }
+
+
+</code></pre>
+
+<p><strong>写出字符串</strong>:</p>
+
+<pre><code class="language-java">// 使用文件名称创建流对象 
+FileWriter fw = new FileWriter(&quot;fw.txt&quot;);
+// 字符串数组形式
+char [] b = &quot;好好学习&quot;.toCharArray();
+fw.write(b); // 好好学习
+// 字符串 
+String msg = &quot;天天向上&quot;;
+// 写出字符数组 
+fw.write(msg); //天天向上
+
+
+</code></pre>
+
+<p><strong>缓冲流</strong>：也叫高效流，是对4个基本的 FileXxx 流的增强，所以也是4个流，按照数据类型分类：</p>
+
+<p><strong>字节缓冲流</strong>： BufferedInputStream ， BufferedOutputStream</p>
+
+<p><strong>字符缓冲流</strong>： BufferedReader ， BufferedWriter</p>
+
+<p>缓冲流的基本原理，是在创建流对象时，会创建一个内置的默认大小的缓冲区数组，通过缓冲区读写，减少系统IO 次数，从而提高读写的效率。</p>
+
+<pre><code class="language-java">/**
+ * 缓冲流 ：创建流对象时，会创建一个内置的默认大小的缓冲区数组，通过缓冲区读写，减少系统IO 次数，从而提高读写的效率
+ * 转化流 ：转化编码问题  比如读写windows创建的文本文件是采用的utf8编码 idea默认也用的是utf-8 则不会造成乱码
+ * 序列化流： 操作一个对象持久化储存 jvm生命周期过后依然存在 如果有一个属性不需要可序列化的，则该属性必须注明是瞬态的，使用 transient 关键字修饰。
+ *           new ObjectOutputStream() 序列化 writeObject(Object o)
+ *           new ObjectInputStream()  反序列化  Object o = (Object)readObject()
+ * 打印流
+ * @author lennon
+ */
+public class TestIoPro {
+    public static void main(String[] args) throws IOException {
+//        bufferRead();
+//        zh();
+        print();
+    }
+    // 缓冲流
+    public static void bufferRead() throws IOException{
+        BufferedWriter writer = new BufferedWriter(new FileWriter(&quot;t.txt&quot;,true));
+        writer.newLine();
+        writer.write(&quot;加油&quot;);
+        BufferedReader reader = new BufferedReader(new FileReader(&quot;t.txt&quot;));
+        String len;
+        while ((len = reader.readLine())!=null){
+            System.out.println(len);
+        }
+        reader.close();
+        writer.close();
+    }
+    // 转化流
+    public static void zh() throws IOException{
+        String name = &quot;F:\\study\\java黑马\\Java基础第二部分资料\\day10\\cs.txt&quot;;
+        // 创建默认编码utf8的流
+        InputStreamReader reader = new InputStreamReader(new FileInputStream(name));
+        OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(name,true));
+        // 创建指定编码的流
+        InputStreamReader reader2 = new InputStreamReader(new FileInputStream(name),&quot;GBK&quot;);
+        int len;
+        while ((len = reader.read())!= -1){
+            System.out.print((char)len);
+        }
+        reader.close();
+        while ((len = reader2.read())!= -1){
+            System.out.print((char)len);
+        }
+        reader2.close();
+        writer.write(&quot;你好世界&quot;);
+        writer.close();
+    }
+    // 打印流
+    public static void print() throws IOException{
+        // 创建一个打印流 并指定文件名称
+        PrintStream printStream = new PrintStream(&quot;ps.txt&quot;);
+        // 改变系统打印流流向ps.txt
+        System.setOut(printStream);
+        // ps.txt 里面输出97
+        System.out.println(97);  
+    }
+}
+
+
+</code></pre>
+
+<p><strong>NIO:</strong></p>
+
+<p><strong>NIO的特性/NIO与IO区别:</strong></p>
+
+<ul>
+<li>1) IO是面向流的，NIO是面向缓冲区的；</li>
+<li>2) IO流是阻塞的，NIO流是不阻塞的;</li>
+<li>3) NIO有选择器，而IO没有。</li>
+</ul>
+
+<p><strong>NIO核心组件：</strong></p>
+
+<ul>
+<li><strong>Channels（通道）</strong></li>
+</ul>
+
+<p>通常来说NIO中的所有IO都是从 Channel 开始的。</p>
+
+<ul>
+<li><strong>Selectors（选择器）</strong></li>
+</ul>
+
+<p>用于检查一个或多个NIO Channel的状态是否处于可读、可写。如此可以实现单线程管理多个channels,也就是可以管理多个网络链接。 使用更少的线程来就可以来处理通道了， 相比使用多个线程，避免了线程上下文切换带来的开销。</p>
+
+<ul>
+<li><strong>Buffers（缓冲区）</strong></li>
+</ul>
+
+<p>Buffer本质上就是一块内存区，Buffers用于和NIO Channel交互。 我们从Channel中读取数据到Buffers里，从Buffer把数据写入到Channels, 一个Buffer有三个属性是必须掌握的，分别是：capacity容量、position位置、limit限制。</p>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://ohohhh.github.io/post/%E9%9D%99%E6%80%81%E4%BB%A3%E7%90%86%E4%B8%8E%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://ohohhh.github.io/post/%E9%9D%99%E6%80%81%E4%BB%A3%E7%90%86%E4%B8%8E%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/">静态代理与动态代理</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
+</div>
+
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'Ohohhh';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</div>
+
+</div>
+</div>
+<script src="https://ohohhh.github.io/js/ui.js"></script>
+<script src="https://ohohhh.github.io/js/menus.js"></script>
+
+
+<script>
+  
+  if (window.location.hostname != "localhost") {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'Your Google Analytics tracking ID', 'auto');
+    ga('send', 'pageview');
+  }
+</script>
+
+
+
+
+
+</body>
+</html>
+

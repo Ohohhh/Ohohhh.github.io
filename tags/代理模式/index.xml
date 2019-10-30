@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>代理模式 on Ohohhh&#39;s blog</title>
+    <link>https://ohohhh.github.io/tags/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/</link>
+    <description>Recent content in 代理模式 on Ohohhh&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>&amp;copy; 2016. All rights reserved.</copyright>
+    <lastBuildDate>Wed, 30 Oct 2019 11:42:15 +0800</lastBuildDate>
+    
+	<atom:link href="https://ohohhh.github.io/tags/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>静态代理与动态代理</title>
+      <link>https://ohohhh.github.io/post/%E9%9D%99%E6%80%81%E4%BB%A3%E7%90%86%E4%B8%8E%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/</link>
+      <pubDate>Wed, 30 Oct 2019 11:42:15 +0800</pubDate>
+      
+      <guid>https://ohohhh.github.io/post/%E9%9D%99%E6%80%81%E4%BB%A3%E7%90%86%E4%B8%8E%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/</guid>
+      <description>代理模式： ​ 代理是当两个类需要通信时，引入第三方代理类，将两个类的关系解耦，让我们只了解代理类即可，而且代理的出现还可以让我们完成与另一个类</description>
+    </item>
+    
+  </channel>
+</rss>

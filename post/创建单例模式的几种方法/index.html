@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.55.6" />
 
-  <title>随笔 &middot; Ohohhh&#39;s blog</title>
+  <title>创建单例模式的几种方法 &middot; Ohohhh&#39;s blog</title>
 
   
   
@@ -222,7 +222,7 @@
 
 
 <div class="header">
-  <h1>随笔</h1>
+  <h1>创建单例模式的几种方法</h1>
   <h2></h2>
 </div>
 <div class="content">
@@ -231,7 +231,7 @@
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>06 Sep 2019, 19:22</time>
+    <time>30 Oct 2019, 11:41</time>
   </div>
 
   
@@ -242,7 +242,7 @@
   <div>
     <i class="fa fa-folder fa-fw"></i>
     
-      <a class="post-taxonomy-topic" href="https://ohohhh.github.io/topics/%E9%9A%8F%E7%AC%94">随笔</a>
+      <a class="post-taxonomy-topic" href="https://ohohhh.github.io/topics/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F">设计模式</a>
     
   </div>
   
@@ -254,7 +254,7 @@
   <div>
     <i class="fa fa-tags fa-fw"></i>
     
-      <a class="post-taxonomy-tag" href="https://ohohhh.github.io/tags/%E5%81%9A%E4%B8%AA%E7%94%B7%E4%BA%BA">做个男人</a>
+      <a class="post-taxonomy-tag" href="https://ohohhh.github.io/tags/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F">单例模式</a>
     
   </div>
   
@@ -262,118 +262,110 @@
 
 </div>
 
-  
+  <p><strong>单例模式：</strong>保证一个类仅有一个实例，并提供一个访问它的全局访问点。</p>
 
-<h3 id="转-做个男人-做个成熟的男人-做个有城府的男人">[转]做个男人，做个成熟的男人，做个有城府的男人</h3>
+<p><strong>饿汉式（线程不安全）</strong>：类加载时就创建该单例</p>
 
-<p><strong>谨记，时刻提醒自己，刻到骨子里去。</strong></p>
+<pre><code class="language-java">public class Singleton {
+    /**
+     *      在静态初始化器中创建单例实例，这段代码保证了线程安全
+     */
+    private static Singleton uniqueInstance =  new Singleton();
+    private Singleton(){}
 
-<p>一：沉稳</p>
+    /**
+     *      提供全局访问该实例的方法
+     */
+    public static Singleton getInstance() {
+        return uniqueInstance;
+    }
+}
+</code></pre>
 
-<p>（1）不要随便显露你的情绪。</p>
+<p><strong>懒汉式</strong>：用的时候再创建单例</p>
 
-<p>（2）不要逢人就诉说你的困难和遭遇。</p>
+<pre><code class="language-java">public class Singleton {
+    private  static Singleton uniqueInstance;
+    private Singleton(){}
 
-<p>（3）在征询别人的意见之前，自己先思考，但不要先讲。</p>
+    /**
+     * 在方法上加上synchronized 关键字 防止线程不安全
+     * @return uniqueInstance
+     */
+    public static synchronized Singleton getInstance() {
+        if (uniqueInstance == null){
+            uniqueInstance = new Singleton();
+        }
+        return uniqueInstance;
+    }
+}
+</code></pre>
 
-<p>（4）不要一有机会就唠叨你的不满。</p>
+<p><strong>懒汉式双重加锁版（推荐）</strong>：</p>
 
-<p>（5）重要的决定尽量有别人商量，最好隔一天再发布。</p>
+<pre><code class="language-java">public class Singleton {
+    /**
+     * volatile保证，当uniqueInstance变量被初始化成Singleton实例时，多个线程可以正确处理uniqueInstance变量
+     *  常用于保持内存可见性(即保证拿到的都是变量的最新值)和防止指令重排序。
+     */
+    private volatile static Singleton uniqueInstance;
+    private Singleton(){}
 
-<p>（6）讲话不要有任何的慌张，走路也是。</p>
+    public static Singleton getInstance() {
+        // 先检查是否已有该实例 没有才进去同步动作 相比之前每一次访问getInstance都要经过synchronized 而这里只需要一次即可
+        if (uniqueInstance == null) {
+            synchronized (Singleton.class){
+                /* 再次判断是为了防止由于多线程情况下 在有线程T1通过第一次检查还没到第二次检查的前提下 cpu被其他线程T2抢占 而T2
+                 又通过了第二次检查创建了实例 等T1再拿到cpu时间则又可以再new一个实例 而这不符合单例模式的初衷    */
+                if (uniqueInstance == null) {
+                    uniqueInstance = new Singleton();
+                }
+            }
+        }
+        return uniqueInstance;
+    }
+}
+</code></pre>
 
-<p>（7）自信是好，但是别忽略任何人的想法。</p>
+<p><strong>静态内部类方式（推荐）</strong>：</p>
 
-<p>（8）人无高低，不要一副拽拽的样子，对人对事，别忘了礼貌。你没有比任何人优秀。</p>
+<pre><code class="language-java">public class Singleton {
+    /**
+     * 静态内部类 : 直接通过类名调用
+     */
+   private static class SingleHolder {
+       private static final Singleton SINGLETON = new Singleton();
+   }
+    
+    public static Singleton getInstance() {
+        return SingleHolder.SINGLETON;
+    }
+}
+</code></pre>
 
-<p>二：细心</p>
+<p><strong>枚举类：</strong> 当涉及到反序列化创建对象时，使用枚举类方式</p>
 
-<p>（1）对身边发生的事情，常思考它们的因果关系。</p>
+<pre><code class="language-java">public enum Singleton2 {
+    //定义一个枚举的元素，它就是 Singleton 的一个实例
+    INSTANCE;
+    public void doSomeThing(){
+        System.out.println(&quot;枚举类实现单例&quot;);
+    }
 
-<p>（2）对做不到位的问题，要发掘它们的根本症结。</p>
-
-<p>（3）对习以为常的做事方法，要有改进或优化的建议。</p>
-
-<p>（4）做什么事情都要养成有条不紊和井然有序的习惯。</p>
-
-<p>（5）经常去找几个别人看不出来的毛病或弊端。</p>
-
-<p>（6）自己要随时随地对有所不足的地方补位。</p>
-
-<p>三：胆识</p>
-
-<p>（1）不要常用缺乏自信的词句。</p>
-
-<p>（2）不要常常反悔，轻易推翻已经决定的事。</p>
-
-<p>（3）在众人争执不休时，不要没有主见。</p>
-
-<p>（4）整体氛围低落时，你要乐观、阳光。</p>
-
-<p>（5）做任何事情都要用心，因为有人在看着你。</p>
-
-<p>（6）事情不顺的时候，歇口气，重新寻找突破口，就结束也要干净利落。</p>
-
-<p>四：大度</p>
-
-<p>（1）不要刻意把有可能是伙伴的人变成对手。</p>
-
-<p>（2）对别人的小过失、小错误不要斤斤计较。</p>
-
-<p>（3）在金钱上要大方，学习三施（财施、法施、无畏施）。</p>
-
-<p>（4）不要有权力的傲慢和知识的偏见。</p>
-
-<p>（5）任何成果和成就都应和别人分享。</p>
-
-<p>五：诚信</p>
-
-<p>（1）做不到的事情不要说，说了就努力做到。</p>
-
-<p>（2）虚的口号或标语不要常挂嘴上。</p>
-
-<p>（3）停止一切“不道德”的手段。</p>
-
-<p>（4）耍弄小聪明，要不得！</p>
-
-<p>六：担当</p>
-
-<p>（1）检讨任何过失的时候，先从自身或自己人开始反省。</p>
-
-<p>（2）事情结束后，先审查过错，再列述功劳。</p>
-
-<p>（3）一个计划，要统筹全局，规划未来。</p>
-
-<p>（4）勇于承担责任所造成的损失。</p>
-
-<p>七：内涵</p>
-
-<p>（1）学习各方面的知识，虚心观察周围的事物。眼界宽阔。</p>
-
-<p>（2）了解自己，培养属于自己的审美观。</p>
-
-<p>（3）笑对生活。懒惰要不得。培养健康的生活习惯。</p>
-
-<p>（4）不要盲目的做任何事。要有目标。</p>
-
-<p>（5）不仅仅只关注内在美，外在美也很重要</p>
-
-<p>（6）不要整天的对着电脑，玩着无聊的东西。</p>
-
-<p>（7）理智的判断，学会控制情绪。</p>
+</code></pre>
 
 
   
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24" style="text-align: left;">
     
-    <a href="https://ohohhh.github.io/post/mysql%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E4%B9%8B%E6%9F%A5%E8%AF%A2/"><i class="fa fa-chevron-left"></i></a>
+    <a href="https://ohohhh.github.io/post/%E7%AE%97%E6%B3%95%E6%8E%92%E5%BA%8F/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
   <div class="pure-u-10-24">
     
     <nav class="prev">
-      <a href="https://ohohhh.github.io/post/mysql%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E4%B9%8B%E6%9F%A5%E8%AF%A2/">Mysql基本使用之查询</a>
+      <a href="https://ohohhh.github.io/post/%E7%AE%97%E6%B3%95%E6%8E%92%E5%BA%8F/">八大算法排序(Java)</a>
     </nav>
     
   </div>
@@ -383,13 +375,13 @@
   <div class="pure-u-10-24">
     
     <nav class="next">
-      <a href="https://ohohhh.github.io/post/%E7%AE%97%E6%B3%95%E6%8E%92%E5%BA%8F/">八大算法排序(Java)</a>
+      <a href="https://ohohhh.github.io/post/%E9%9D%99%E6%80%81%E4%BB%A3%E7%90%86%E4%B8%8E%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/">静态代理与动态代理</a>
     </nav>
     
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
     
-    <a href="https://ohohhh.github.io/post/%E7%AE%97%E6%B3%95%E6%8E%92%E5%BA%8F/"><i class="fa fa-chevron-right"></i></a>
+    <a href="https://ohohhh.github.io/post/%E9%9D%99%E6%80%81%E4%BB%A3%E7%90%86%E4%B8%8E%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/"><i class="fa fa-chevron-right"></i></a>
     
   </div>
 </div>
