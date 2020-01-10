@@ -3,12 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://ohohhh.github.io/topics/java/</loc>
-    <lastmod>2020-01-10T16:10:25+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://ohohhh.github.io/post/leyou%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2020-01-10T16:10:25+08:00</lastmod>
   </url>
@@ -33,6 +27,12 @@
   
   <url>
     <loc>https://ohohhh.github.io/topics/</loc>
+    <lastmod>2020-01-10T16:10:25+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ohohhh.github.io/topics/java/</loc>
     <lastmod>2020-01-10T16:10:25+08:00</lastmod>
     <priority>0</priority>
   </url>
