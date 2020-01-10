@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>&amp;copy; 2016. All rights reserved.</copyright>
-    <lastBuildDate>Wed, 30 Oct 2019 12:23:08 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 10 Jan 2020 16:10:25 +0800</lastBuildDate>
     
 	<atom:link href="https://ohohhh.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Leyou项目笔记</title>
+      <link>https://ohohhh.github.io/post/leyou%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Fri, 10 Jan 2020 16:10:25 +0800</pubDate>
+      
+      <guid>https://ohohhh.github.io/post/leyou%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0/</guid>
+      <description>错误日志： java.lang.TypeNotPresentException: Type javax.xml.bind.JAXBContext not present 错误原因： java9+版本以后，JAXB默认没有加载 解决方法：手动添加 jaxb模块 &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;javax.xml.bind&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;jaxb-api&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;com.sun.xml.bind&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;jaxb-impl&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.3.0&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.glassfish.jaxb&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;jaxb-runtime&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.3.0&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;javax.activation&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;activation&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.1.1&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;</description>
+    </item>
     
     <item>
       <title>Java基础整理</title>
